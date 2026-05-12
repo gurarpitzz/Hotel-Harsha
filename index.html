@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Harsha, Shimla | Victorian Heritage since 1977</title>
-    <meta name="description" content="Experience Victorian elegance and pine wood charm at Hotel Harsha, Shimla. A heritage stay since 1977.">
-    
+    <meta name="description"
+        content="Experience Victorian elegance and pine wood charm at Hotel Harsha, Shimla. A heritage stay since 1977.">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
     <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -36,20 +43,82 @@
     </script>
 
     <style>
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
-        @keyframes zoomIn { from { transform: scale(1); } to { transform: scale(1.1); } }
-        @keyframes pulse-soft { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.9; } }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
 
-        @keyframes logoFadeIn {
-            0% { opacity: 0; transform: scale(0.9) translateY(10px); filter: blur(5px); }
-            100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+            to {
+                opacity: 1;
+            }
         }
 
-        .fade-in { animation: fadeIn 1.2s ease-out forwards; }
-        .logo-fade-in { animation: logoFadeIn 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
-        .reveal { opacity: 0; transition: all 1s ease-out; transform: translateY(20px); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes pulse-soft {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
+        }
+
+        @keyframes logoFadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.9) translateY(10px);
+                filter: blur(5px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+                filter: blur(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+
+        .logo-fade-in {
+            animation: logoFadeIn 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+
+        .reveal {
+            opacity: 0;
+            transition: all 1s ease-out;
+            transform: translateY(20px);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         .intro-overlay {
             position: fixed;
@@ -79,7 +148,9 @@
         }
 
         @keyframes draw {
-            to { stroke-dashoffset: 0; }
+            to {
+                stroke-dashoffset: 0;
+            }
         }
 
         .hero-video-container {
@@ -107,7 +178,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Increased from 0.3 for better contrast */
+            background: rgba(0, 0, 0, 0.5);
+            /* Increased from 0.3 for better contrast */
         }
 
         .glass-nav {
@@ -117,6 +189,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.4s ease;
         }
+
         .glass-nav.scrolled {
             background: rgba(248, 245, 242, 0.9);
             backdrop-filter: blur(15px);
@@ -147,7 +220,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             z-index: 1000;
             animation: pulse-soft 2s infinite;
         }
@@ -158,21 +231,26 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
         }
+
         @media (max-width: 768px) {
             .bento-grid {
                 grid-template-columns: 1fr;
             }
         }
+
         /* Carousel Customization */
-        .carousel-control-prev, .carousel-control-next {
+        .carousel-control-prev,
+        .carousel-control-next {
             width: 10%;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        .room-card:hover .carousel-control-prev, 
+
+        .room-card:hover .carousel-control-prev,
         .room-card:hover .carousel-control-next {
             opacity: 1;
         }
+
         .carousel-indicators [data-bs-target] {
             width: 6px;
             height: 6px;
@@ -180,22 +258,27 @@
             margin: 0 4px;
             background-color: rgba(255, 255, 255, 0.5);
         }
+
         .carousel-indicators .active {
             background-color: white;
         }
+
         /* Gallery Specifics */
         .gallery-item {
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .gallery-collage {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1rem;
         }
+
         .gallery-view-btn.active {
             background: #4A3728;
             color: #F8F5F2;
         }
+
         .gallery-view-btn {
             border: 1px solid #4A3728;
             padding: 0.5rem 1.5rem;
@@ -207,6 +290,7 @@
         }
     </style>
 </head>
+
 <body class="bg-linen text-cedar font-sans selection:bg-forest selection:text-white">
 
     <!-- Intro Splash -->
@@ -225,20 +309,31 @@
                 <img src="hotel harsha logo.png" alt="Hotel Harsha Logo" class="h-10 w-auto">
                 <div class="flex flex-col">
                     <span class="font-serif text-lg leading-none text-cedar tracking-tight">Harsha Hotel</span>
-                    <span class="text-[7px] uppercase tracking-[0.1em] text-cedar/60 font-bold">A Home Away from Home</span>
+                    <span class="text-[7px] uppercase tracking-[0.1em] text-cedar/60 font-bold">A Home Away from
+                        Home</span>
                 </div>
             </a>
             <div class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.2em] font-bold">
                 <a href="#story" class="hover:text-[#E34E2B] transition-colors">The Story</a>
                 <a href="#rooms" class="hover:text-[#E34E2B] transition-colors">Rooms</a>
                 <a href="#dining" class="hover:text-[#E34E2B] transition-colors">Dining</a>
+                <a href="#gallery" class="hover:text-[#E34E2B] transition-colors">Gallery</a>
                 <a href="#contact" class="hover:text-[#E34E2B] transition-colors">Contact</a>
             </div>
-            <button class="md:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button id="mobile-menu-btn" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-linen border-t border-cedar/10 py-6 px-6 space-y-4">
+            <a href="#story" class="block text-[10px] uppercase tracking-widest font-bold">The Story</a>
+            <a href="#rooms" class="block text-[10px] uppercase tracking-widest font-bold">Rooms</a>
+            <a href="#dining" class="block text-[10px] uppercase tracking-widest font-bold">Dining</a>
+            <a href="#gallery" class="block text-[10px] uppercase tracking-widest font-bold">Gallery</a>
+            <a href="#contact" class="block text-[10px] uppercase tracking-widest font-bold">Contact</a>
         </div>
     </nav>
 
@@ -248,24 +343,35 @@
             <source src="MMT Hotel  Harsha_1.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-white px-6 text-center -translate-y-12">
+        <div
+            class="absolute inset-0 flex flex-col items-center justify-center text-white px-6 text-center -translate-y-12">
             <h2 class="font-serif text-4xl md:text-7xl mb-6 max-w-4xl leading-tight reveal">
                 Heritage, Pine Wood, and Victorian Elegance since 1977.
             </h2>
-            <a href="#rooms" class="glass-panel text-white px-8 py-3 text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-cedar hover:text-linen transition-all duration-300 reveal">
+            <a href="#rooms"
+                class="glass-panel text-white px-8 py-3 text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-cedar hover:text-linen transition-all duration-300 reveal">
                 Explore Rooms
             </a>
         </div>
-        
+
         <!-- Audio Toggle (Glassmorphism Pill) -->
-        <div class="absolute bottom-8 right-8 flex items-center space-x-4 cursor-pointer group glass-panel px-5 py-2 rounded-full transition-all duration-300 hover:bg-white/20" id="audio-toggle">
-            <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/80 group-hover:text-white transition-opacity">Sound On/Off</span>
+        <div class="absolute bottom-8 right-8 flex items-center space-x-4 cursor-pointer group glass-panel px-5 py-2 rounded-full transition-all duration-300 hover:bg-white/20"
+            id="audio-toggle">
+            <span
+                class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/80 group-hover:text-white transition-opacity">Sound
+                On/Off</span>
             <div class="text-white">
-                <svg id="sound-icon-on" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd" />
+                <svg id="sound-icon-on" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"
+                        clip-rule="evenodd" />
                 </svg>
-                <svg id="sound-icon-off" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                <svg id="sound-icon-off" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd" />
                 </svg>
             </div>
         </div>
@@ -279,24 +385,42 @@
                 <h2 class="font-serif text-4xl md:text-5xl mb-8">The Heritage of Harsha</h2>
                 <div class="space-y-6 opacity-80 leading-relaxed text-lg">
                     <p>
-                        Shimla is well known for its matchless hospitality and cultural diversity. Finding accommodation in Shimla has never been a problem for the travelers. All Shimla hotels strive hard to provide the best hotel services to their guests. We at Hotel Harsha provide you luxury accommodation at the City Center of Shimla and that too at economic prices. Travelers who come from different parts of the world start their journey into Himalayas from here. Our hotel is a renowned budget hotel in the category of budget hotels in Shimla.
+                        Shimla is well known for its matchless hospitality and cultural diversity. Finding accommodation
+                        in Shimla has never been a problem for the travelers. All Shimla hotels strive hard to provide
+                        the best hotel services to their guests. We at Hotel Harsha provide you luxury accommodation at
+                        the City Center of Shimla and that too at economic prices. Travelers who come from different
+                        parts of the world start their journey into Himalayas from here. Our hotel is a renowned budget
+                        hotel in the category of budget hotels in Shimla.
                     </p>
                     <p>
-                        We are one of most experienced and renowned hotels in Shimla, one of the few Hotels offering Drive in Facility. We provide quick online hotel booking to all our guests from different parts of the world. We also provide pick up to all our guests so that they do not face any hustles when they arrive at Shimla. We provide exciting discounts from time to time to our guests. The Hotel is approved by the Department of Tourism & Civil Aviation, Government of Himachal Pradesh.
+                        We are one of most experienced and renowned hotels in Shimla, one of the few Hotels offering
+                        Drive in Facility. We provide quick online hotel booking to all our guests from different parts
+                        of the world. We also provide pick up to all our guests so that they do not face any hustles
+                        when they arrive at Shimla. We provide exciting discounts from time to time to our guests. The
+                        Hotel is approved by the Department of Tourism & Civil Aviation, Government of Himachal Pradesh.
                     </p>
                     <p>
-                        Experience the fine art of hospitality at Hotel Harsha, Shimla. We go the extra mile to make sure you have a great time in Shimla. We provide exquisite facilities as compared to other hotels in shimla. We have wide varieties of rooms including Standard room, Deluxe room, Superior room, Family room & Suite.
+                        Experience the fine art of hospitality at Hotel Harsha, Shimla. We go the extra mile to make
+                        sure you have a great time in Shimla. We provide exquisite facilities as compared to other
+                        hotels in shimla. We have wide varieties of rooms including Standard room, Deluxe room, Superior
+                        room, Family room & Suite.
                     </p>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-8 reveal">
                 <div class="relative group overflow-hidden">
-                    <img src="I91A9638.jpg" alt="Hotel Exterior" class="w-full h-[500px] object-cover rounded-sm shadow-2xl transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 border border-white/40 m-6 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <img src="I91A9638.jpg" alt="Hotel Exterior"
+                        class="w-full h-[500px] object-cover rounded-sm shadow-2xl transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 border border-white/40 m-6 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
                 </div>
                 <div class="relative group mt-24 overflow-hidden">
-                    <img src="superior deluxe/I91A9654.jpg" alt="Pine Wood Detail" class="w-full h-[500px] object-cover rounded-sm shadow-2xl transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 border border-white/40 m-6 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <img src="superior deluxe/I91A9654.jpg" alt="Pine Wood Detail"
+                        class="w-full h-[500px] object-cover rounded-sm shadow-2xl transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 border border-white/40 m-6 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
                 </div>
             </div>
         </div>
@@ -308,8 +432,13 @@
             <div class="text-center mb-16 reveal">
                 <h2 class="font-serif text-4xl md:text-5xl mb-4">Curated Stays</h2>
                 <p class="opacity-60 tracking-widest uppercase text-xs mb-6">Exquisite Comfort & Pine Wood Elegance</p>
-                <a href="https://www.google.com/travel/hotels/entity/ChkIzJGEmYfugJnYARoML2cvMTFnX2IzYmYxEAE/overview" target="_blank" class="inline-flex items-center space-x-2 text-[10px] uppercase tracking-[0.2em] font-bold text-forest hover:opacity-70 transition-opacity">
-                    <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current"><path d="M12.48 10.92v3.28h4.74c-.2 1.22-.97 2.22-2.25 3.07v2.55h3.64c2.13-1.97 3.36-4.87 3.36-8.3 0-.54-.05-1.07-.14-1.6H12.48zM5.13 16.34c.46 1.4 1.76 2.4 3.32 2.4 1.49 0 2.76-.8 3.38-1.97l2.55 1.97c-1.33 1.22-3.09 1.97-5.93 1.97-4.04 0-7.46-2.32-9.04-5.7l2.87-2.22c.69 2.05 2.58 3.45 4.85 3.45.99 0 1.92-.27 2.72-.73l2.55 1.97c-.89.81-2.11 1.29-3.47 1.29-2.58 0-4.68-2.1-4.68-4.68 0-.44.06-.86.18-1.26L2.3 12.89C1.48 14.28 1 15.9 1 17.62c0 4.04 2.32 7.46 5.7 9.04l2.22-2.87C6.87 23.1 5.47 21.21 5.47 18.94c0-.93.27-1.81.74-2.56l-1.08-.04z"/></svg>
+                <a href="https://www.google.com/travel/hotels/entity/ChkIzJGEmYfugJnYARoML2cvMTFnX2IzYmYxEAE/overview"
+                    target="_blank"
+                    class="inline-flex items-center space-x-2 text-[10px] uppercase tracking-[0.2em] font-bold text-forest hover:opacity-70 transition-opacity">
+                    <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current">
+                        <path
+                            d="M12.48 10.92v3.28h4.74c-.2 1.22-.97 2.22-2.25 3.07v2.55h3.64c2.13-1.97 3.36-4.87 3.36-8.3 0-.54-.05-1.07-.14-1.6H12.48zM5.13 16.34c.46 1.4 1.76 2.4 3.32 2.4 1.49 0 2.76-.8 3.38-1.97l2.55 1.97c-1.33 1.22-3.09 1.97-5.93 1.97-4.04 0-7.46-2.32-9.04-5.7l2.87-2.22c.69 2.05 2.58 3.45 4.85 3.45.99 0 1.92-.27 2.72-.73l2.55 1.97c-.89.81-2.11 1.29-3.47 1.29-2.58 0-4.68-2.1-4.68-4.68 0-.44.06-.86.18-1.26L2.3 12.89C1.48 14.28 1 15.9 1 17.62c0 4.04 2.32 7.46 5.7 9.04l2.22-2.87C6.87 23.1 5.47 21.21 5.47 18.94c0-.93.27-1.81.74-2.56l-1.08-.04z" />
+                    </svg>
                     <span>View Reviews on Google</span>
                 </a>
             </div>
@@ -319,38 +448,53 @@
                 <div class="room-card group overflow-hidden relative reveal">
                     <div id="carouselSuperior" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselSuperior" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#carouselSuperior" data-bs-slide-to="0"
+                                class="active"></button>
                             <button type="button" data-bs-target="#carouselSuperior" data-bs-slide-to="1"></button>
                             <button type="button" data-bs-target="#carouselSuperior" data-bs-slide-to="2"></button>
                             <button type="button" data-bs-target="#carouselSuperior" data-bs-slide-to="3"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="superior deluxe/I91A9647-2.jpg" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" alt="Superior Deluxe">
+                                <img src="superior deluxe/I91A9647-2.jpg"
+                                    class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                    alt="Superior Deluxe">
                             </div>
                             <div class="carousel-item">
-                                <img src="superior deluxe/I91A9648.jpg" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" alt="Superior Deluxe">
+                                <img src="superior deluxe/I91A9648.jpg"
+                                    class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                    alt="Superior Deluxe">
                             </div>
                             <div class="carousel-item">
-                                <img src="superior deluxe/I91A9661.jpg" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" alt="Superior Deluxe">
+                                <img src="superior deluxe/I91A9661.jpg"
+                                    class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                    alt="Superior Deluxe">
                             </div>
                             <div class="carousel-item">
-                                <img src="superior deluxe/I91A9664.jpg" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" alt="Superior Deluxe">
+                                <img src="superior deluxe/I91A9664.jpg"
+                                    class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                    alt="Superior Deluxe">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSuperior" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSuperior"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSuperior" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSuperior"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         </button>
                     </div>
                     <div class="p-8 bg-white flex justify-between items-end border-b border-cedar/10">
                         <div>
                             <h3 class="font-serif text-2xl mb-1">Superior Deluxe</h3>
-                            <p class="text-forest font-semibold">₹5,500 <span class="text-xs font-normal opacity-60">/ Night</span></p>
+                            <p class="text-forest font-semibold">₹5,500 <span class="text-xs font-normal opacity-60">/
+                                    Night</span></p>
                         </div>
-                        <a href="https://wa.me/919810139655?text=Hi%20Hotel%20Harsha,%20I'm%20interested%20in%20booking%20a%20Superior%20Deluxe%20stay.%20Please%20share%20availability." target="_blank" class="text-xs uppercase tracking-widest font-bold border-b border-cedar hover:text-forest hover:border-forest transition-colors">Book Now</a>
+                        <a href="https://wa.me/919810139655?text=Hi%20Hotel%20Harsha,%20I'm%20interested%20in%20booking%20a%20Superior%20Deluxe%20stay.%20Please%20share%20availability."
+                            target="_blank"
+                            class="text-xs uppercase tracking-widest font-bold border-b border-cedar hover:text-forest hover:border-forest transition-colors">Book
+                            Now</a>
                     </div>
                 </div>
 
@@ -358,38 +502,53 @@
                 <div class="room-card group overflow-hidden relative reveal">
                     <div id="carouselSuper" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselSuper" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#carouselSuper" data-bs-slide-to="0"
+                                class="active"></button>
                             <button type="button" data-bs-target="#carouselSuper" data-bs-slide-to="1"></button>
                             <button type="button" data-bs-target="#carouselSuper" data-bs-slide-to="2"></button>
                             <button type="button" data-bs-target="#carouselSuper" data-bs-slide-to="3"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="super deluxe/I91A9527.jpg" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" alt="Super Deluxe">
+                                <img src="super deluxe/I91A9527.jpg"
+                                    class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                    alt="Super Deluxe">
                             </div>
                             <div class="carousel-item">
-                                <img src="super deluxe/I91A9718.jpg" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" alt="Super Deluxe">
+                                <img src="super deluxe/I91A9718.jpg"
+                                    class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                    alt="Super Deluxe">
                             </div>
                             <div class="carousel-item">
-                                <img src="super deluxe/I91A9724.jpg" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" alt="Super Deluxe">
+                                <img src="super deluxe/I91A9724.jpg"
+                                    class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                    alt="Super Deluxe">
                             </div>
                             <div class="carousel-item">
-                                <img src="super deluxe/I91A9741.jpg" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" alt="Super Deluxe">
+                                <img src="super deluxe/I91A9741.jpg"
+                                    class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                    alt="Super Deluxe">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSuper" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSuper"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSuper" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSuper"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         </button>
                     </div>
                     <div class="p-8 bg-white flex justify-between items-end border-b border-cedar/10">
                         <div>
                             <h3 class="font-serif text-2xl mb-1">Super Deluxe</h3>
-                            <p class="text-forest font-semibold">₹4,500 <span class="text-xs font-normal opacity-60">/ Night</span></p>
+                            <p class="text-forest font-semibold">₹4,500 <span class="text-xs font-normal opacity-60">/
+                                    Night</span></p>
                         </div>
-                        <a href="https://wa.me/919810139655?text=Hi%20Hotel%20Harsha,%20I'm%20interested%20in%20booking%20a%20Super%20Deluxe%20stay.%20Please%20share%20availability." target="_blank" class="text-xs uppercase tracking-widest font-bold border-b border-cedar hover:text-forest hover:border-forest transition-colors">Book Now</a>
+                        <a href="https://wa.me/919810139655?text=Hi%20Hotel%20Harsha,%20I'm%20interested%20in%20booking%20a%20Super%20Deluxe%20stay.%20Please%20share%20availability."
+                            target="_blank"
+                            class="text-xs uppercase tracking-widest font-bold border-b border-cedar hover:text-forest hover:border-forest transition-colors">Book
+                            Now</a>
                     </div>
                 </div>
 
@@ -397,34 +556,47 @@
                 <div class="room-card group overflow-hidden relative reveal">
                     <div id="carouselSemi" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselSemi" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#carouselSemi" data-bs-slide-to="0"
+                                class="active"></button>
                             <button type="button" data-bs-target="#carouselSemi" data-bs-slide-to="1"></button>
                             <button type="button" data-bs-target="#carouselSemi" data-bs-slide-to="2"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="Semi Deluxe/I91A9569.jpg" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" alt="Semi Deluxe">
+                                <img src="Semi Deluxe/I91A9569.jpg"
+                                    class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                    alt="Semi Deluxe">
                             </div>
                             <div class="carousel-item">
-                                <img src="Semi Deluxe/I91A9416.jpg" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" alt="Semi Deluxe">
+                                <img src="Semi Deluxe/I91A9416.jpg"
+                                    class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                    alt="Semi Deluxe">
                             </div>
                             <div class="carousel-item">
-                                <img src="Semi Deluxe/I91A9418.jpg" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" alt="Semi Deluxe">
+                                <img src="Semi Deluxe/I91A9418.jpg"
+                                    class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                    alt="Semi Deluxe">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSemi" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSemi"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSemi" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSemi"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         </button>
                     </div>
                     <div class="p-8 bg-white flex justify-between items-end border-b border-cedar/10">
                         <div>
                             <h3 class="font-serif text-2xl mb-1">Semi Deluxe</h3>
-                            <p class="text-forest font-semibold">₹3,500 <span class="text-xs font-normal opacity-60">/ Night</span></p>
+                            <p class="text-forest font-semibold">₹3,500 <span class="text-xs font-normal opacity-60">/
+                                    Night</span></p>
                         </div>
-                        <a href="https://wa.me/919810139655?text=Hi%20Hotel%20Harsha,%20I'm%20interested%20in%20booking%20a%20Semi%20Deluxe%20stay.%20Please%20share%20availability." target="_blank" class="text-xs uppercase tracking-widest font-bold border-b border-cedar hover:text-forest hover:border-forest transition-colors">Book Now</a>
+                        <a href="https://wa.me/919810139655?text=Hi%20Hotel%20Harsha,%20I'm%20interested%20in%20booking%20a%20Semi%20Deluxe%20stay.%20Please%20share%20availability."
+                            target="_blank"
+                            class="text-xs uppercase tracking-widest font-bold border-b border-cedar hover:text-forest hover:border-forest transition-colors">Book
+                            Now</a>
                     </div>
                 </div>
 
@@ -432,34 +604,47 @@
                 <div class="room-card group overflow-hidden relative reveal">
                     <div id="carouselFamily" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselFamily" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#carouselFamily" data-bs-slide-to="0"
+                                class="active"></button>
                             <button type="button" data-bs-target="#carouselFamily" data-bs-slide-to="1"></button>
                             <button type="button" data-bs-target="#carouselFamily" data-bs-slide-to="2"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="family suite/I91A9767.jpg" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" alt="Family Suite">
+                                <img src="family suite/I91A9767.jpg"
+                                    class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                    alt="Family Suite">
                             </div>
                             <div class="carousel-item">
-                                <img src="family suite/I91A9757.jpg" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" alt="Family Suite">
+                                <img src="family suite/I91A9757.jpg"
+                                    class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                    alt="Family Suite">
                             </div>
                             <div class="carousel-item">
-                                <img src="family suite/I91A9759.jpg" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110" alt="Family Suite">
+                                <img src="family suite/I91A9759.jpg"
+                                    class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                    alt="Family Suite">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselFamily" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselFamily"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselFamily" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselFamily"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         </button>
                     </div>
                     <div class="p-8 bg-white flex justify-between items-end border-b border-cedar/10">
                         <div>
                             <h3 class="font-serif text-2xl mb-1">Family Suite</h3>
-                            <p class="text-forest font-semibold">₹6,500 <span class="text-xs font-normal opacity-60">/ Night</span></p>
+                            <p class="text-forest font-semibold">₹6,500 <span class="text-xs font-normal opacity-60">/
+                                    Night</span></p>
                         </div>
-                        <a href="https://wa.me/919810139655?text=Hi%20Hotel%20Harsha,%20I'm%20interested%20in%20booking%20a%20Family%20Suite%20stay.%20Please%20share%20availability." target="_blank" class="text-xs uppercase tracking-widest font-bold border-b border-cedar hover:text-forest hover:border-forest transition-colors">Book Now</a>
+                        <a href="https://wa.me/919810139655?text=Hi%20Hotel%20Harsha,%20I'm%20interested%20in%20booking%20a%20Family%20Suite%20stay.%20Please%20share%20availability."
+                            target="_blank"
+                            class="text-xs uppercase tracking-widest font-bold border-b border-cedar hover:text-forest hover:border-forest transition-colors">Book
+                            Now</a>
                     </div>
                 </div>
             </div>
@@ -480,10 +665,14 @@
                 </div>
             </div>
             <div class="md:w-1/2 order-1 md:order-2 reveal">
-                <span class="text-forest font-semibold tracking-widest text-xs uppercase mb-4 block">Kadambari Restaurant</span>
-                <h2 class="font-serif text-4xl md:text-5xl mb-8 leading-tight">Authentic Flavors, Warm Wooden Ambiance.</h2>
+                <span class="text-forest font-semibold tracking-widest text-xs uppercase mb-4 block">Kadambari
+                    Restaurant</span>
+                <h2 class="font-serif text-4xl md:text-5xl mb-8 leading-tight">Authentic Flavors, Warm Wooden Ambiance.
+                </h2>
                 <p class="text-lg leading-relaxed opacity-80 mb-6">
-                    Our in-house restaurant, Kadambari, features a warm wooden ambiance with a seating capacity of 40+. Enjoy a curated menu of local and multi-cuisine delicacies in a space that celebrates the essence of Shimla.
+                    Our in-house restaurant, Kadambari, features a warm wooden ambiance with a seating capacity of 40+.
+                    Enjoy a curated menu of local and multi-cuisine delicacies in a space that celebrates the essence of
+                    Shimla.
                 </p>
                 <ul class="space-y-4 text-sm uppercase tracking-widest font-semibold opacity-70">
                     <li class="flex items-center space-x-3">
@@ -510,46 +699,85 @@
                 <h2 class="font-serif text-4xl mb-4">Hotel Amenities</h2>
                 <p class="text-[10px] uppercase tracking-[0.4em] opacity-60">Thoughtful services for a seamless stay</p>
             </div>
-            
+
             <div class="grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-16 max-w-6xl mx-auto">
                 <!-- Drive in with Parking -->
                 <div class="flex flex-col items-center text-center reveal">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-6 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-6 opacity-40" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5" />
+                    </svg>
                     <h3 class="text-sm font-bold uppercase tracking-widest">Drive in with Parking</h3>
                 </div>
                 <!-- Free Internet (WiFi) -->
                 <div class="flex flex-col items-center text-center reveal">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-6 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.313 8.939c5.857-5.858 15.355-5.858 21.213 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-6 opacity-40" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path
+                            d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.313 8.939c5.857-5.858 15.355-5.858 21.213 0"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                    </svg>
                     <h3 class="text-sm font-bold uppercase tracking-widest">Free Internet (WiFi)</h3>
                 </div>
                 <!-- Restaurant -->
                 <div class="flex flex-col items-center text-center reveal">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-6 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.084.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.503 0-2.878.351-4 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-6 opacity-40" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.084.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.503 0-2.878.351-4 1.253"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                    </svg>
                     <h3 class="text-sm font-bold uppercase tracking-widest">Kadambari Restaurant</h3>
                 </div>
                 <!-- Credit Card Accepted -->
                 <div class="flex flex-col items-center text-center reveal">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-6 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-6 opacity-40" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                    </svg>
                     <h3 class="text-sm font-bold uppercase tracking-widest">Credit Cards Accepted</h3>
                 </div>
                 <!-- Car Rentals -->
                 <div class="flex flex-col items-center text-center reveal">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-6 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-6 opacity-40" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="1.5" />
+                        <path
+                            d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                    </svg>
                     <h3 class="text-sm font-bold uppercase tracking-widest">Car Rentals</h3>
                 </div>
                 <!-- Reservations -->
                 <div class="flex flex-col items-center text-center reveal">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-6 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-6 opacity-40" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                    </svg>
                     <h3 class="text-sm font-bold uppercase tracking-widest">Travel & Reservations</h3>
                 </div>
                 <!-- Medical Help -->
                 <div class="flex flex-col items-center text-center reveal">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-6 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-6 opacity-40" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                    </svg>
                     <h3 class="text-sm font-bold uppercase tracking-widest">Medical help 24/7</h3>
                 </div>
                 <!-- Laundry -->
                 <div class="flex flex-col items-center text-center reveal">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-6 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-6 opacity-40" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                    </svg>
                     <h3 class="text-sm font-bold uppercase tracking-widest">Laundry / Dry Clean</h3>
                 </div>
             </div>
@@ -562,13 +790,15 @@
             <div class="text-center mb-16 reveal">
                 <h2 class="font-serif text-4xl md:text-5xl mb-4">The Gallery</h2>
                 <p class="opacity-60 tracking-widest uppercase text-xs mb-8">A Visual Journey through Harsha</p>
-                
+
                 <div class="flex justify-center mb-12">
                     <div class="inline-flex rounded-sm shadow-sm overflow-hidden border border-cedar">
-                        <button id="show-slideshow" class="gallery-view-btn active px-6 py-2 text-[10px] font-bold uppercase tracking-widest bg-cedar text-linen transition-colors">
+                        <button id="show-slideshow"
+                            class="gallery-view-btn active px-6 py-2 text-[10px] font-bold uppercase tracking-widest bg-cedar text-linen transition-colors">
                             Slideshow
                         </button>
-                        <button id="show-collage" class="gallery-view-btn px-6 py-2 text-[10px] font-bold uppercase tracking-widest text-cedar hover:bg-cedar hover:text-linen transition-colors border-l border-cedar">
+                        <button id="show-collage"
+                            class="gallery-view-btn px-6 py-2 text-[10px] font-bold uppercase tracking-widest text-cedar hover:bg-cedar hover:text-linen transition-colors border-l border-cedar">
                             Collage
                         </button>
                     </div>
@@ -577,112 +807,152 @@
 
             <!-- Slideshow View -->
             <div id="gallery-slideshow-container" class="reveal">
-                <div id="mainGalleryCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+                <div id="mainGalleryCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                    data-bs-interval="4000">
                     <div class="carousel-inner rounded-sm shadow-2xl">
                         <!-- Centrally Located -->
                         <div class="carousel-item active">
                             <div class="relative h-[650px]">
-                                <img src="secondary_assets/I91A9638.jpg" class="w-full h-full object-cover" alt="Centrally Located">
-                                <div class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80"></div>
+                                <img src="secondary_assets/I91A9638.jpg" class="w-full h-full object-cover"
+                                    alt="Centrally Located">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80">
+                                </div>
                                 <div class="absolute bottom-16 left-16 text-white max-w-2xl">
                                     <h3 class="font-serif text-4xl mb-4">Centrally Located</h3>
-                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">Situated right in the heart of Shimla City. Travelers start their journey into Himalayas from here.</p>
+                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">Situated
+                                        right in the heart of Shimla City. Travelers start their journey into Himalayas
+                                        from here.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- Reception -->
                         <div class="carousel-item">
                             <div class="relative h-[650px]">
-                                <img src="secondary_assets/I91A9635.jpg" class="w-full h-full object-cover" alt="Reception">
-                                <div class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80"></div>
+                                <img src="secondary_assets/I91A9635.jpg" class="w-full h-full object-cover"
+                                    alt="Reception">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80">
+                                </div>
                                 <div class="absolute bottom-16 left-16 text-white max-w-2xl">
                                     <h3 class="font-serif text-4xl mb-4">Reception</h3>
-                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">Welcome to Hotel Harsha, Shimla. Experience the fine art of hospitality.</p>
+                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">Welcome to
+                                        Hotel Harsha, Shimla. Experience the fine art of hospitality.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- Drive In Parking -->
                         <div class="carousel-item">
                             <div class="relative h-[650px]">
-                                <img src="secondary_assets/I91A9638.jpg" class="w-full h-full object-cover" alt="Drive In Parking">
-                                <div class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80"></div>
+                                <img src="secondary_assets/I91A9638.jpg" class="w-full h-full object-cover"
+                                    alt="Drive In Parking">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80">
+                                </div>
                                 <div class="absolute bottom-16 left-16 text-white max-w-2xl">
                                     <h3 class="font-serif text-4xl mb-4">Drive In Parking</h3>
-                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">One of the few Hotels offering you Parking Space in Shimla.</p>
+                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">One of the
+                                        few Hotels offering you Parking Space in Shimla.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- Superior Deluxe -->
                         <div class="carousel-item">
                             <div class="relative h-[650px]">
-                                <img src="secondary_assets/I91A9647-2.jpg" class="w-full h-full object-cover" alt="Superior Deluxe">
-                                <div class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80"></div>
+                                <img src="secondary_assets/I91A9647-2.jpg" class="w-full h-full object-cover"
+                                    alt="Superior Deluxe">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80">
+                                </div>
                                 <div class="absolute bottom-16 left-16 text-white max-w-2xl">
                                     <h3 class="font-serif text-4xl mb-4">Superior Deluxe</h3>
-                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">Rooms delicately furnished to give you a Homely Feeling. Memory that lasts.</p>
+                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">Rooms
+                                        delicately furnished to give you a Homely Feeling. Memory that lasts.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- Night View -->
                         <div class="carousel-item">
                             <div class="relative h-[650px]">
-                                <img src="secondary_assets/I91A9189.jpg" class="w-full h-full object-cover" alt="Night View">
-                                <div class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80"></div>
+                                <img src="secondary_assets/I91A9189.jpg" class="w-full h-full object-cover"
+                                    alt="Night View">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80">
+                                </div>
                                 <div class="absolute bottom-16 left-16 text-white max-w-2xl">
                                     <h3 class="font-serif text-4xl mb-4">Night View</h3>
-                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">View of Shimla from Hotel Harsha at night. Enchanting and serene.</p>
+                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">View of
+                                        Shimla from Hotel Harsha at night. Enchanting and serene.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- Kadambari Restaurant -->
                         <div class="carousel-item">
                             <div class="relative h-[650px]">
-                                <img src="secondary_assets/dining 1.jpg" class="w-full h-full object-cover" alt="Kadambari Restaurant">
-                                <div class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80"></div>
+                                <img src="secondary_assets/dining 1.jpg" class="w-full h-full object-cover"
+                                    alt="Kadambari Restaurant">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80">
+                                </div>
                                 <div class="absolute bottom-16 left-16 text-white max-w-2xl">
                                     <h3 class="font-serif text-4xl mb-4">Kadambari Restaurant</h3>
-                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">Serving wide variety of Indian and Chinese Cusines to feed your taste buds.</p>
+                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">Serving
+                                        wide variety of Indian and Chinese Cusines to feed your taste buds.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- View from Hotel -->
                         <div class="carousel-item">
                             <div class="relative h-[650px]">
-                                <img src="secondary_assets/I91A9313.jpg" class="w-full h-full object-cover" alt="View from Hotel">
-                                <div class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80"></div>
+                                <img src="secondary_assets/I91A9313.jpg" class="w-full h-full object-cover"
+                                    alt="View from Hotel">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80">
+                                </div>
                                 <div class="absolute bottom-16 left-16 text-white max-w-2xl">
                                     <h3 class="font-serif text-4xl mb-4">View from Hotel</h3>
-                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">Enjoy the Lust Green Deodar trees and greenery around the hotel.</p>
+                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">Enjoy the
+                                        Lust Green Deodar trees and greenery around the hotel.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- Family Suite -->
                         <div class="carousel-item">
                             <div class="relative h-[650px]">
-                                <img src="secondary_assets/I91A9767.jpg" class="w-full h-full object-cover" alt="Family Suite">
-                                <div class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80"></div>
+                                <img src="secondary_assets/I91A9767.jpg" class="w-full h-full object-cover"
+                                    alt="Family Suite">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80">
+                                </div>
                                 <div class="absolute bottom-16 left-16 text-white max-w-2xl">
                                     <h3 class="font-serif text-4xl mb-4">Family Suite</h3>
-                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">Spacious Rooms for Family and Holidays together….. only at Hotel Harsha, Shimla.</p>
+                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">Spacious
+                                        Rooms for Family and Holidays together….. only at Hotel Harsha, Shimla.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- Semi Deluxe -->
                         <div class="carousel-item">
                             <div class="relative h-[650px]">
-                                <img src="secondary_assets/I91A9407.jpg" class="w-full h-full object-cover" alt="Semi Deluxe">
-                                <div class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80"></div>
+                                <img src="secondary_assets/I91A9407.jpg" class="w-full h-full object-cover"
+                                    alt="Semi Deluxe">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-cedar/90 via-transparent to-transparent opacity-80">
+                                </div>
                                 <div class="absolute bottom-16 left-16 text-white max-w-2xl">
                                     <h3 class="font-serif text-4xl mb-4">Semi Deluxe</h3>
-                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">Room that suites everyones pocket & liking. Comfort at economic prices.</p>
+                                    <p class="text-sm opacity-80 uppercase tracking-[0.3em] leading-relaxed">Room that
+                                        suites everyones pocket & liking. Comfort at economic prices.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#mainGalleryCarousel" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#mainGalleryCarousel"
+                        data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#mainGalleryCarousel" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#mainGalleryCarousel"
+                        data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     </button>
                 </div>
@@ -691,14 +961,22 @@
             <!-- Collage View (Hidden by default) -->
             <div id="gallery-collage-container" class="hidden reveal">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <img src="I91A9638.jpg" class="w-full h-64 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
-                    <img src="superior deluxe/I91A9654.jpg" class="w-full h-64 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
-                    <img src="super deluxe/I91A9736.jpg" class="w-full h-64 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
-                    <img src="Semi Deluxe/I91A9569.jpg" class="w-full h-64 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
-                    <img src="family suite/I91A9767.jpg" class="w-full h-64 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
-                    <img src="dining 2.jpg" class="w-full h-64 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
-                    <img src="I91A9638.jpg" class="w-full h-64 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
-                    <img src="superior deluxe/I91A9646.jpg" class="w-full h-64 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
+                    <img src="I91A9638.jpg"
+                        class="w-full h-64 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
+                    <img src="superior deluxe/I91A9654.jpg"
+                        class="w-full h-64 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
+                    <img src="super deluxe/I91A9736.jpg"
+                        class="w-full h-64 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
+                    <img src="Semi Deluxe/I91A9569.jpg"
+                        class="w-full h-64 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
+                    <img src="family suite/I91A9767.jpg"
+                        class="w-full h-64 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
+                    <img src="dining 2.jpg"
+                        class="w-full h-64 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
+                    <img src="I91A9638.jpg"
+                        class="w-full h-64 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
+                    <img src="superior deluxe/I91A9646.jpg"
+                        class="w-full h-64 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
                 </div>
             </div>
         </div>
@@ -712,32 +990,46 @@
                 <!-- Contact Form -->
                 <div class="reveal">
                     <h2 class="font-serif text-4xl mb-8">Get in Touch</h2>
-                    <p class="text-cedar/60 mb-12 uppercase tracking-widest text-xs font-bold">Have questions? We're here to help.</p>
-                    
+                    <p class="text-cedar/60 mb-12 uppercase tracking-widest text-xs font-bold">Have questions? We're
+                        here to help.</p>
+
                     <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
                         <!-- Replace with your Access Key from web3forms.com -->
                         <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
                         <input type="hidden" name="to" value="mail@harshahotelshimla.com, harshahotelshimla@gmail.com">
-                        
+
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-[10px] uppercase tracking-widest font-bold mb-2 opacity-60">Name</label>
-                                <input type="text" name="name" required class="w-full bg-transparent border-b border-cedar/20 py-3 focus:outline-none focus:border-forest transition-colors text-sm" placeholder="Your Name">
+                                <label
+                                    class="block text-[10px] uppercase tracking-widest font-bold mb-2 opacity-60">Name</label>
+                                <input type="text" name="name" required
+                                    class="w-full bg-transparent border-b border-cedar/20 py-3 focus:outline-none focus:border-forest transition-colors text-sm"
+                                    placeholder="Your Name">
                             </div>
                             <div>
-                                <label class="block text-[10px] uppercase tracking-widest font-bold mb-2 opacity-60">Email</label>
-                                <input type="email" name="email" required class="w-full bg-transparent border-b border-cedar/20 py-3 focus:outline-none focus:border-forest transition-colors text-sm" placeholder="Your Email">
+                                <label
+                                    class="block text-[10px] uppercase tracking-widest font-bold mb-2 opacity-60">Email</label>
+                                <input type="email" name="email" required
+                                    class="w-full bg-transparent border-b border-cedar/20 py-3 focus:outline-none focus:border-forest transition-colors text-sm"
+                                    placeholder="Your Email">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-[10px] uppercase tracking-widest font-bold mb-2 opacity-60">Subject</label>
-                            <input type="text" name="subject" required class="w-full bg-transparent border-b border-cedar/20 py-3 focus:outline-none focus:border-forest transition-colors text-sm" placeholder="Inquiry Type">
+                            <label
+                                class="block text-[10px] uppercase tracking-widest font-bold mb-2 opacity-60">Subject</label>
+                            <input type="text" name="subject" required
+                                class="w-full bg-transparent border-b border-cedar/20 py-3 focus:outline-none focus:border-forest transition-colors text-sm"
+                                placeholder="Inquiry Type">
                         </div>
                         <div>
-                            <label class="block text-[10px] uppercase tracking-widest font-bold mb-2 opacity-60">Message</label>
-                            <textarea name="message" rows="4" required class="w-full bg-transparent border-b border-cedar/20 py-3 focus:outline-none focus:border-forest transition-colors text-sm resize-none" placeholder="How can we assist you?"></textarea>
+                            <label
+                                class="block text-[10px] uppercase tracking-widest font-bold mb-2 opacity-60">Message</label>
+                            <textarea name="message" rows="4" required
+                                class="w-full bg-transparent border-b border-cedar/20 py-3 focus:outline-none focus:border-forest transition-colors text-sm resize-none"
+                                placeholder="How can we assist you?"></textarea>
                         </div>
-                        <button type="submit" class="bg-cedar text-linen px-12 py-4 text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-forest transition-all duration-300 w-full md:w-auto">
+                        <button type="submit"
+                            class="bg-cedar text-linen px-12 py-4 text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-forest transition-all duration-300 w-full md:w-auto">
                             Send Message
                         </button>
                     </form>
@@ -746,17 +1038,13 @@
                 <!-- Map and Details -->
                 <div class="reveal">
                     <div class="h-[450px] w-full rounded-sm overflow-hidden shadow-2xl mb-12">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3416.7115858342735!2d77.149123!3d31.10412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390579f3f32d247f%3A0xf01de2b9de9a3dbb!2sHotel%20Harsha!5e0!3m2!1sen!2sin!4v1715520000000!5m2!1sen!2sin" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3416.7115858342735!2d77.149123!3d31.10412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390579f3f32d247f%3A0xf01de2b9de9a3dbb!2sHotel%20Harsha!5e0!3m2!1sen!2sin!4v1715520000000!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
-                    
+
                     <div class="grid md:grid-cols-2 gap-8">
                         <div>
                             <h4 class="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-60">Address</h4>
@@ -767,7 +1055,8 @@
                             </p>
                         </div>
                         <div>
-                            <h4 class="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-60">Quick Contact</h4>
+                            <h4 class="text-[10px] uppercase tracking-widest font-bold mb-4 opacity-60">Quick Contact
+                            </h4>
                             <p class="text-sm leading-relaxed">
                                 +91 9810139655<br>
                                 mail@harshahotelshimla.com
@@ -781,7 +1070,8 @@
 
     <!-- Footer -->
     <footer class="py-12 border-t border-cedar/10 bg-linen">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+        <div
+            class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <a href="#" class="flex items-center space-x-3">
                 <img src="hotel harsha logo.png" alt="Hotel Harsha Logo" class="h-10 w-auto">
                 <span class="font-serif text-lg text-cedar">Hotel Harsha</span>
@@ -790,17 +1080,21 @@
                 &copy; 2026 Hotel Harsha Shimla. All rights reserved.
             </div>
             <div class="flex space-x-8 text-[10px] uppercase tracking-widest font-bold">
-                <a href="https://www.facebook.com/HarshaShimlasimla/" target="_blank" class="hover:text-forest transition-colors">Facebook</a>
-                <a href="https://www.google.com/travel/hotels/entity/ChkIzJGEmYfugJnYARoML2cvMTFnX2IzYmYxEAE/overview" target="_blank" class="hover:text-forest transition-colors">Google</a>
+                <a href="https://www.facebook.com/HarshaShimlasimla/" target="_blank"
+                    class="hover:text-forest transition-colors">Facebook</a>
+                <a href="https://www.google.com/travel/hotels/entity/ChkIzJGEmYfugJnYARoML2cvMTFnX2IzYmYxEAE/overview"
+                    target="_blank" class="hover:text-forest transition-colors">Google</a>
                 <a href="#intro-splash" class="hover:text-forest transition-colors">Back to Top</a>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp FAB -->
-    <a href="https://wa.me/919810139655?text=Hi%20Hotel%20Harsha,%20I'm%20interested%20in%20booking%20a%20stay.%20Please%20share%20availability." target="_blank" class="whatsapp-fab">
+    <a href="https://wa.me/919810139655?text=Hi%20Hotel%20Harsha,%20I'm%20interested%20in%20booking%20a%20stay.%20Please%20share%20availability."
+        target="_blank" class="whatsapp-fab">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 448 512">
-            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.7 68.9 27.1 106.1 27.1h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.1 0-65.6-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.4-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.3 5.7 23.6 9.2 31.7 11.7 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+            <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.7 68.9 27.1 106.1 27.1h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.1 0-65.6-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.4-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.3 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.3 5.7 23.6 9.2 31.7 11.7 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
         </svg>
     </a>
 
@@ -894,6 +1188,22 @@
             collageContainer.classList.remove('hidden');
             slideshowContainer.classList.add('hidden');
         });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
     </script>
 </body>
+
 </html>
