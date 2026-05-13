@@ -1280,7 +1280,11 @@
         <div id="cart-content" class="flex-1 overflow-y-auto p-8 space-y-8">
             <!-- Global Dates -->
             <div class="bg-white p-6 rounded-sm shadow-sm border border-cedar/5 space-y-4">
-                <h4 class="text-[10px] uppercase tracking-widest font-bold text-cedar opacity-40">Stay Period</h4>
+                <div class="space-y-1">
+                    <label class="text-[8px] uppercase tracking-widest font-bold opacity-40">Your Full Name</label>
+                    <input type="text" id="cart-name" placeholder="Enter your full name" class="w-full text-sm border-b border-cedar/20 focus:border-forest outline-none py-1 bg-transparent">
+                </div>
+                <h4 class="text-[10px] uppercase tracking-widest font-bold text-cedar opacity-40 pt-2">Stay Period</h4>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="space-y-1">
                         <label class="text-[8px] uppercase tracking-widest font-bold">Check-in</label>
@@ -1656,7 +1660,12 @@
         function proceedToWhatsApp() {
             const checkin = document.getElementById('cart-checkin').value;
             const checkout = document.getElementById('cart-checkout').value;
+            const guestName = document.getElementById('cart-name').value;
             
+            if (!guestName) {
+                alert('Please enter your name first.');
+                return;
+            }
             if (!checkin || !checkout) {
                 alert('Please select your stay dates first.');
                 return;
@@ -1684,9 +1693,10 @@
             const totalGuests = cart.reduce((acc, item) => acc + item.guests, 0);
             const totalExtraBeds = cart.reduce((acc, item) => acc + item.extraBedding, 0);
 
-            const message = `Hello, I would like to book rooms at your hotel.
+            const message = `Hello, I am ${guestName}. I would like to book rooms at your hotel.
 
 Booking Details:
+* Guest Name: ${guestName}
 * Check-in: ${new Date(checkin).toLocaleDateString('en-GB')}
 * Check-out: ${new Date(checkout).toLocaleDateString('en-GB')}
 * Nights: ${nights}
