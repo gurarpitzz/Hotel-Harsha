@@ -8,6 +8,10 @@ jobs:
   web-deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true 
+
     steps:
     - name: Get latest code
       uses: actions/checkout@v4
@@ -19,4 +23,5 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
-        server-dir: ./
+        # Changed to ./ because Bluehost locks this login inside the harsha-gs folder
+        server-dir: ./  
