@@ -400,8 +400,8 @@
             <source src="MMT Hotel Harsha_2.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
-        <div
-            class="absolute inset-0 flex flex-col items-center justify-center text-white px-6 text-center -translate-y-12">
+        <div id="hero-content-wrapper"
+            class="absolute inset-0 flex flex-col items-center justify-center text-white px-6 text-center -translate-y-12 transition-all duration-[2000ms]">
             <h2 class="font-serif text-4xl md:text-7xl mb-6 max-w-4xl leading-tight reveal">
                 Heritage, Pine Wood, and Victorian Elegance since 1977.
             </h2>
@@ -1190,6 +1190,17 @@
     </a>
 
     <script>
+        // Hero Content Timeout
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const heroContent = document.getElementById('hero-content-wrapper');
+                if (heroContent) {
+                    heroContent.style.opacity = '0';
+                    heroContent.style.pointerEvents = 'none';
+                }
+            }, 10000); // 10 seconds
+        });
+
         // Intro Splash Script
         window.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
