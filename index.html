@@ -416,7 +416,7 @@
 
     <!-- Hero Section -->
     <section class="hero-video-container">
-        <video id="hero-video" autoplay loop muted playsinline>
+        <video id="hero-video" autoplay loop playsinline>
             <source src="MMT Hotel Harsha_2.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
@@ -1758,6 +1758,19 @@ Please confirm availability.`;
         const audioToggle = document.getElementById('audio-toggle');
         const iconOn = document.getElementById('sound-icon-on');
         const iconOff = document.getElementById('sound-icon-off');
+
+        // Attempt to play with sound on load
+        window.addEventListener('load', () => {
+            video.muted = false;
+            video.play().catch(error => {
+                // If blocked, play muted as fallback
+                video.muted = true;
+                video.play();
+                // Update icons to show muted state initially if blocked
+                iconOn.classList.add('hidden');
+                iconOff.classList.remove('hidden');
+            });
+        });
 
         // Smart Unmute: Unmute on first user interaction to satisfy browser policies
         const unmuteOnInteraction = () => {
