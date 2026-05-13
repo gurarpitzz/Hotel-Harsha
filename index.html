@@ -184,17 +184,32 @@
 
         .glass-nav {
             background: rgba(248, 245, 242, 0.05);
+            background: rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.4s ease;
         }
 
-        .glass-nav.scrolled {
-            background: rgba(248, 245, 242, 0.9);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(74, 55, 40, 0.1);
+        #main-nav.scrolled {
+            background: rgba(250, 247, 242, 0.98);
+            backdrop-filter: blur(10px);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(74, 55, 40, 0.05);
+        }
+
+        #main-nav.scrolled .nav-link {
+            color: #4A3728 !important;
+        }
+
+        #main-nav.scrolled .nav-logo-text {
+            color: #4A3728 !important;
+        }
+
+        #main-nav.scrolled #mobile-menu-btn {
+            color: #4A3728 !important;
         }
 
         .glass-panel {
@@ -350,19 +365,19 @@
             <a href="#" class="flex items-center space-x-3 group">
                 <img src="hotel harsha logo.png" alt="Hotel Harsha Logo" class="h-10 w-auto">
                 <div class="flex flex-col">
-                    <span class="font-serif text-lg leading-none text-cedar tracking-tight">Harsha Hotel</span>
-                    <span class="text-[7px] uppercase tracking-[0.1em] text-cedar/60 font-bold">A Home Away from
+                    <span class="font-serif text-lg leading-none nav-logo-text text-white tracking-tight transition-colors duration-500">Harsha Hotel</span>
+                    <span class="text-[7px] uppercase tracking-[0.1em] text-white/60 font-bold">A Home Away from
                         Home</span>
                 </div>
             </a>
-            <div class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.2em] font-bold">
-                <a href="#story" class="hover:text-[#E34E2B] transition-colors">The Story</a>
-                <a href="#rooms" class="hover:text-[#E34E2B] transition-colors">Rooms</a>
-                <a href="#dining" class="hover:text-[#E34E2B] transition-colors">Dining</a>
-                <a href="#gallery" class="hover:text-[#E34E2B] transition-colors">Gallery</a>
-                <a href="#contact" class="hover:text-[#E34E2B] transition-colors">Contact</a>
+            <div class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.3em] font-bold text-linen">
+                <a href="#story" class="nav-link hover:opacity-60 transition-all duration-300">The Story</a>
+                <a href="#rooms" class="nav-link hover:opacity-60 transition-all duration-300">Rooms</a>
+                <a href="#dining" class="nav-link hover:opacity-60 transition-all duration-300">Dining</a>
+                <a href="#gallery" class="nav-link hover:opacity-60 transition-all duration-300">Gallery</a>
+                <a href="#contact" class="nav-link hover:opacity-60 transition-all duration-300">Contact</a>
             </div>
-            <button id="mobile-menu-btn" class="md:hidden">
+            <button id="mobile-menu-btn" class="md:hidden text-linen transition-colors duration-500 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -1116,7 +1131,7 @@
             class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <a href="#" class="flex items-center space-x-3">
                 <img src="hotel harsha logo.png" alt="Hotel Harsha Logo" class="h-10 w-auto">
-                <span class="font-serif text-lg text-cedar">Hotel Harsha</span>
+                <span class="font-serif text-lg text-linen nav-logo-text transition-colors duration-500">Hotel Harsha</span>
             </a>
             <div class="text-[10px] uppercase tracking-[0.3em] opacity-40">
                 &copy; 2026 Hotel Harsha Shimla. All rights reserved.
