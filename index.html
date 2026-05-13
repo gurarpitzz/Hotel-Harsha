@@ -722,46 +722,70 @@
                 <p class="opacity-60 tracking-widest uppercase text-[10px] text-cedar">Choose the plan that suits you best</p>
             </div>
             
-            <div class="max-w-5xl mx-auto overflow-x-auto reveal bg-white shadow-xl rounded-sm">
-                <table class="w-full text-left border-collapse">
+            <div class="max-w-5xl mx-auto reveal bg-white shadow-2xl rounded-sm">
+                <table class="w-full text-left border-collapse table-fixed md:table-auto">
                     <thead>
-                        <tr class="bg-cedar text-linen uppercase text-[9px] md:text-[10px] tracking-[0.2em] font-bold">
-                            <th class="py-6 px-4 md:px-8 border-b border-white/10">Room Type</th>
-                            <th class="py-6 px-4 md:px-8 border-b border-white/10 text-center">Room Only</th>
-                            <th class="py-6 px-4 md:px-8 border-b border-white/10 text-center">With Breakfast</th>
-                            <th class="py-6 px-4 md:px-8 border-b border-white/10 text-center">With Breakfast & Dinner</th>
+                        <tr class="bg-cedar text-linen uppercase text-[8px] md:text-[10px] tracking-tight md:tracking-[0.2em] font-bold">
+                            <th class="py-4 px-2 md:py-6 md:px-8 border-b border-white/10 w-[30%] md:w-auto">Room Type</th>
+                            <th class="py-4 px-1 md:py-6 md:px-8 border-b border-white/10 text-center">
+                                <span class="md:hidden">Only</span>
+                                <span class="hidden md:inline">Room Only</span>
+                            </th>
+                            <th class="py-4 px-1 md:py-6 md:px-8 border-b border-white/10 text-center">
+                                <span class="md:hidden">B.Fast</span>
+                                <span class="hidden md:inline">With Breakfast</span>
+                            </th>
+                            <th class="py-4 px-1 md:py-6 md:px-8 border-b border-white/10 text-center">
+                                <span class="md:hidden">Bf + Dn</span>
+                                <span class="hidden md:inline">Breakfast & Dinner</span>
+                            </th>
                         </tr>
                     </thead>
-                    <tbody class="text-sm text-cedar">
+                    <tbody class="text-[10px] md:text-sm text-cedar">
                         <tr class="hover:bg-cedar/5 transition-colors border-b border-cedar/5">
-                            <td class="py-5 px-4 md:px-8 font-serif text-lg">Family Suite (4 Pax)</td>
-                            <td class="py-5 px-4 md:px-8 text-center font-bold">₹4,500</td>
-                            <td class="py-5 px-4 md:px-8 text-center font-bold">₹5,900</td>
-                            <td class="py-5 px-4 md:px-8 text-center font-bold">₹7,900</td>
+                            <td class="py-4 px-2 md:py-5 md:px-8">
+                                <span class="font-serif md:text-lg block leading-tight">Family Suite</span>
+                                <span class="text-[7px] md:text-xs opacity-50 uppercase tracking-tighter md:tracking-widest">(4 Pax)</span>
+                            </td>
+                            <td class="py-4 px-1 md:py-5 md:px-8 text-center font-bold">₹4,500</td>
+                            <td class="py-4 px-1 md:py-5 md:px-8 text-center font-bold">₹5,900</td>
+                            <td class="py-4 px-1 md:py-5 md:px-8 text-center font-bold">₹7,900</td>
                         </tr>
                         <tr class="hover:bg-cedar/5 transition-colors border-b border-cedar/5">
-                            <td class="py-5 px-4 md:px-8 font-serif text-lg">Superior Deluxe (2 Pax)</td>
-                            <td class="py-5 px-4 md:px-8 text-center font-bold">₹4,300</td>
-                            <td class="py-5 px-4 md:px-8 text-center font-bold">₹5,000</td>
-                            <td class="py-5 px-4 md:px-8 text-center font-bold">₹6,000</td>
+                            <td class="py-4 px-2 md:py-5 md:px-8">
+                                <span class="font-serif md:text-lg block leading-tight">Superior Deluxe</span>
+                                <span class="text-[7px] md:text-xs opacity-50 uppercase tracking-tighter md:tracking-widest">(2 Pax)</span>
+                            </td>
+                            <td class="py-4 px-1 md:py-5 md:px-8 text-center font-bold">₹4,300</td>
+                            <td class="py-4 px-1 md:py-5 md:px-8 text-center font-bold">₹5,000</td>
+                            <td class="py-4 px-1 md:py-5 md:px-8 text-center font-bold">₹6,000</td>
                         </tr>
                         <tr class="hover:bg-cedar/5 transition-colors border-b border-cedar/5">
-                            <td class="py-5 px-4 md:px-8 font-serif text-lg">Super Deluxe (2 Pax)</td>
-                            <td class="py-5 px-4 md:px-8 text-center font-bold">₹3,400</td>
-                            <td class="py-5 px-4 md:px-8 text-center font-bold">₹4,100</td>
-                            <td class="py-5 px-4 md:px-8 text-center font-bold">₹5,100</td>
+                            <td class="py-4 px-2 md:py-5 md:px-8">
+                                <span class="font-serif md:text-lg block leading-tight">Super Deluxe</span>
+                                <span class="text-[7px] md:text-xs opacity-50 uppercase tracking-tighter md:tracking-widest">(2 Pax)</span>
+                            </td>
+                            <td class="py-4 px-1 md:py-5 md:px-8 text-center font-bold">₹3,400</td>
+                            <td class="py-4 px-1 md:py-5 md:px-8 text-center font-bold">₹4,100</td>
+                            <td class="py-4 px-1 md:py-5 md:px-8 text-center font-bold">₹5,100</td>
                         </tr>
                         <tr class="hover:bg-cedar/5 transition-colors border-b border-cedar/5">
-                            <td class="py-5 px-4 md:px-8 font-serif text-lg">Semi Deluxe (2 Pax)</td>
-                            <td class="py-5 px-4 md:px-8 text-center font-bold">₹3,200</td>
-                            <td class="py-5 px-4 md:px-8 text-center font-bold">₹3,900</td>
-                            <td class="py-5 px-4 md:px-8 text-center font-bold">₹4,900</td>
+                            <td class="py-4 px-2 md:py-5 md:px-8">
+                                <span class="font-serif md:text-lg block leading-tight">Semi Deluxe</span>
+                                <span class="text-[7px] md:text-xs opacity-50 uppercase tracking-tighter md:tracking-widest">(2 Pax)</span>
+                            </td>
+                            <td class="py-4 px-1 md:py-5 md:px-8 text-center font-bold">₹3,200</td>
+                            <td class="py-4 px-1 md:py-5 md:px-8 text-center font-bold">₹3,900</td>
+                            <td class="py-5 px-1 md:px-8 text-center font-bold">₹4,900</td>
                         </tr>
                         <tr class="hover:bg-forest/5 transition-colors bg-forest/5">
-                            <td class="py-5 px-4 md:px-8 font-serif text-lg">Extra Pax (1 Pax)</td>
-                            <td class="py-5 px-4 md:px-8 text-center font-bold">₹500</td>
-                            <td class="py-5 px-4 md:px-8 text-center font-bold">₹850</td>
-                            <td class="py-5 px-4 md:px-8 text-center font-bold">₹1,350</td>
+                            <td class="py-4 px-2 md:py-5 md:px-8">
+                                <span class="font-serif md:text-lg block leading-tight">Extra Pax</span>
+                                <span class="text-[7px] md:text-xs opacity-50 uppercase tracking-tighter md:tracking-widest">(1 Pax)</span>
+                            </td>
+                            <td class="py-4 px-1 md:py-5 md:px-8 text-center font-bold">₹500</td>
+                            <td class="py-4 px-1 md:py-5 md:px-8 text-center font-bold">₹850</td>
+                            <td class="py-4 px-1 md:py-5 md:px-8 text-center font-bold">₹1,350</td>
                         </tr>
                     </tbody>
                 </table>
