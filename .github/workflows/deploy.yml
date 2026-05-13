@@ -23,5 +23,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
-        # Changed to ./ because Bluehost locks this login inside the harsha-gs folder
-        server-dir: ./  
+        server-dir: ./
+        # This tells GitHub to leave your manually uploaded video completely alone
+        exclude: |
+          **/MMT Hotel Harsha_2.mp4
