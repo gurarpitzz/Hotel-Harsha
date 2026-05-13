@@ -374,7 +374,7 @@
                 <a href="#story" class="nav-link hover:opacity-60 transition-all duration-300">The Story</a>
                 <a href="#rooms" class="nav-link hover:opacity-60 transition-all duration-300">Rooms</a>
                 <a href="#tariff" class="nav-link hover:opacity-60 transition-all duration-300">Rates</a>
-                <a href="#dining" class="nav-link hover:opacity-60 transition-all duration-300">Dining</a>
+                <a href="#booking" class="nav-link hover:opacity-60 transition-all duration-300">Booking</a>
                 <a href="#gallery" class="nav-link hover:opacity-60 transition-all duration-300">Gallery</a>
                 <a href="#contact" class="nav-link hover:opacity-60 transition-all duration-300">Contact</a>
             </div>
@@ -390,7 +390,7 @@
             <a href="#story" class="block text-[10px] uppercase tracking-widest font-bold">The Story</a>
             <a href="#rooms" class="block text-[10px] uppercase tracking-widest font-bold">Rooms</a>
             <a href="#tariff" class="block text-[10px] uppercase tracking-widest font-bold">Rates</a>
-            <a href="#dining" class="block text-[10px] uppercase tracking-widest font-bold">Dining</a>
+            <a href="#booking" class="block text-[10px] uppercase tracking-widest font-bold">Booking</a>
             <a href="#gallery" class="block text-[10px] uppercase tracking-widest font-bold">Gallery</a>
             <a href="#contact" class="block text-[10px] uppercase tracking-widest font-bold">Contact</a>
         </div>
@@ -1247,6 +1247,169 @@
                 <a href="https://www.google.com/travel/hotels/entity/ChkIzJGEmYfugJnYARoML2cvMTFnX2IzYmYxEAE/overview"
                     target="_blank" class="hover:text-forest transition-colors">Google</a>
                 <a href="#top" class="hover:text-forest transition-colors">Back to Top</a>
+    <!-- Booking Enquiry Section -->
+    <section id="booking" class="py-24 bg-white border-t border-cedar/5">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-serif text-4xl md:text-5xl mb-4 text-cedar">Book Your Stay</h2>
+                <p class="opacity-60 tracking-widest uppercase text-[10px] text-cedar">Plan your perfect Shimla getaway</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
+                <!-- Booking Form -->
+                <div class="lg:w-2/3 bg-linen/30 p-8 md:p-12 rounded-sm reveal">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Dates -->
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest font-bold opacity-60">Check-in Date</label>
+                            <input type="date" id="checkin" class="w-full bg-white border border-cedar/10 px-4 py-3 rounded-sm focus:outline-none focus:border-forest transition-colors">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest font-bold opacity-60">Check-out Date</label>
+                            <input type="date" id="checkout" class="w-full bg-white border border-cedar/10 px-4 py-3 rounded-sm focus:outline-none focus:border-forest transition-colors">
+                        </div>
+
+                        <!-- Room Selection -->
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest font-bold opacity-60">Room Type</label>
+                            <select id="room-type-select" class="w-full bg-white border border-cedar/10 px-4 py-3 rounded-sm focus:outline-none focus:border-forest transition-colors">
+                                <option value="Superior Deluxe" data-price="5500" data-capacity="2">Superior Deluxe (₹5,500/night)</option>
+                                <option value="Super Deluxe" data-price="4500" data-capacity="2">Super Deluxe (₹4,500/night)</option>
+                                <option value="Semi Deluxe" data-price="3500" data-capacity="2">Semi Deluxe (₹3,500/night)</option>
+                                <option value="Family Suite" data-price="6500" data-capacity="4">Family Suite (₹6,500/night)</option>
+                            </select>
+                        </div>
+
+                        <!-- Quantity -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-widest font-bold opacity-60">No. of Rooms</label>
+                                <input type="number" id="room-qty" min="1" value="1" class="w-full bg-white border border-cedar/10 px-4 py-3 rounded-sm focus:outline-none focus:border-forest transition-colors">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase tracking-widest font-bold opacity-60">Total Guests</label>
+                                <input type="number" id="guest-qty" min="1" value="2" class="w-full bg-white border border-cedar/10 px-4 py-3 rounded-sm focus:outline-none focus:border-forest transition-colors">
+                            </div>
+                        </div>
+
+                        <!-- Extra Bedding -->
+                        <div class="md:col-span-2 space-y-4 pt-4 border-t border-cedar/5">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <input type="checkbox" id="extra-bed-toggle" class="w-4 h-4 accent-forest">
+                                    <label for="extra-bed-toggle" class="text-sm font-bold uppercase tracking-widest text-cedar">Add Extra Bedding</label>
+                                </div>
+                                <div id="extra-bed-controls" class="hidden flex items-center space-x-4">
+                                    <label class="text-[10px] uppercase tracking-widest font-bold opacity-40">Qty:</label>
+                                    <input type="number" id="extra-bed-qty" min="1" value="1" class="w-16 bg-white border border-cedar/10 px-3 py-1 rounded-sm focus:outline-none">
+                                </div>
+                            </div>
+                            <p class="text-[10px] opacity-40 italic">* Extra bedding is ₹1,000 per bed per night</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="lg:w-1/3 reveal">
+                    <div class="bg-cedar text-linen p-8 rounded-sm sticky top-24 shadow-2xl">
+                        <h3 class="font-serif text-2xl mb-8 border-b border-white/10 pb-4">Booking Summary</h3>
+                        
+                        <div id="cart-details" class="space-y-6 text-sm">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="font-bold uppercase tracking-widest text-[10px] opacity-60 mb-1">Room Selection</p>
+                                    <p id="summary-room-name" class="font-serif text-lg">Select details...</p>
+                                </div>
+                                <p id="summary-room-subtotal" class="font-bold">₹0</p>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-4">
+                                <div>
+                                    <p class="text-[9px] uppercase tracking-widest opacity-60">Stay Duration</p>
+                                    <p id="summary-nights" class="font-bold">0 Nights</p>
+                                </div>
+                                <div>
+                                    <p class="text-[9px] uppercase tracking-widest opacity-60">Total Guests</p>
+                                    <p id="summary-guests" class="font-bold">0</p>
+                                </div>
+                            </div>
+
+                            <div id="summary-extra-bed-row" class="hidden flex justify-between border-t border-white/5 pt-4">
+                                <p class="text-[10px] uppercase tracking-widest opacity-60">Extra Bedding</p>
+                                <p id="summary-extra-bed-total" class="font-bold">₹0</p>
+                            </div>
+
+                            <div class="border-t-2 border-white/20 pt-6 mt-8">
+                                <div class="flex justify-between items-end">
+                                    <p class="text-xs uppercase tracking-[0.2em] font-bold">Estimated Total</p>
+                                    <div class="text-right">
+                                        <p id="summary-total" class="text-2xl font-serif">₹0</p>
+                                        <p class="text-[8px] opacity-60 mt-1 uppercase tracking-widest">+ GST/Service Charges may apply</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="whatsapp-proceed" class="w-full mt-10 bg-forest text-white py-4 rounded-sm uppercase tracking-[0.3em] font-bold text-xs hover:bg-linen hover:text-forest transition-all duration-500 shadow-xl">
+                            Proceed to WhatsApp
+                        </button>
+                        
+                        <div id="guest-warning" class="hidden mt-4 p-3 bg-red-900/30 border border-red-500/20 rounded text-[9px] uppercase tracking-widest text-red-200 text-center">
+                            Guest limit exceeded for selected rooms
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-cedar text-linen pt-24 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+                <div class="reveal">
+                    <img src="hotel harsha logo.png" alt="Hotel Harsha Logo" class="h-16 w-auto mb-8 brightness-0 invert opacity-80">
+                    <p class="opacity-60 leading-relaxed text-sm">
+                        A timeless heritage retreat in the heart of Shimla. Experience Victorian elegance and warm hospitality since 1977.
+                    </p>
+                </div>
+                <div class="reveal">
+                    <h4 class="text-xs uppercase tracking-[0.3em] font-bold mb-8 opacity-40">Contact Info</h4>
+                    <ul class="space-y-4 text-sm opacity-80">
+                        <li class="flex items-start space-x-3">
+                            <span class="w-5 h-5 flex-shrink-0 opacity-40">📍</span>
+                            <span>Hotel Harsha, Near Secretariat, Chotta Shimla, Shimla, Himachal Pradesh 171002</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <span class="w-5 h-5 flex-shrink-0 opacity-40">📞</span>
+                            <span>+91 9810139655</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <span class="w-5 h-5 flex-shrink-0 opacity-40">✉️</span>
+                            <span>hotelharshashimla@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="reveal">
+                    <h4 class="text-xs uppercase tracking-[0.3em] font-bold mb-8 opacity-40">Quick Links</h4>
+                    <ul class="space-y-4 text-sm uppercase tracking-widest font-semibold opacity-60">
+                        <li><a href="#story" class="hover:text-forest transition-colors">Our Story</a></li>
+                        <li><a href="#rooms" class="hover:text-forest transition-colors">Rooms</a></li>
+                        <li><a href="#tariff" class="hover:text-forest transition-colors">Tariff</a></li>
+                        <li><a href="#gallery" class="hover:text-forest transition-colors">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="reveal">
+                    <h4 class="text-xs uppercase tracking-[0.3em] font-bold mb-8 opacity-40">Social Media</h4>
+                    <div class="flex space-x-6">
+                        <a href="https://www.instagram.com/hotelharsha" class="opacity-60 hover:opacity-100 transition-opacity">Instagram</a>
+                        <a href="https://www.facebook.com/HarshaShimlasimla/" class="opacity-60 hover:opacity-100 transition-opacity">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest opacity-40">
+                <p>© 2026 Hotel Harsha Shimla. All rights reserved.</p>
+                <p>Built with Heritage & Heart</p>
             </div>
         </div>
     </footer>
@@ -1285,6 +1448,125 @@
                 }
             }, 10000); // 10 seconds
         });
+
+        // Booking Logic
+        const checkinInput = document.getElementById('checkin');
+        const checkoutInput = document.getElementById('checkout');
+        const roomTypeSelect = document.getElementById('room-type-select');
+        const roomQtyInput = document.getElementById('room-qty');
+        const guestQtyInput = document.getElementById('guest-qty');
+        const extraBedToggle = document.getElementById('extra-bed-toggle');
+        const extraBedControls = document.getElementById('extra-bed-controls');
+        const extraBedQtyInput = document.getElementById('extra-bed-qty');
+
+        const summaryRoomName = document.getElementById('summary-room-name');
+        const summaryRoomSubtotal = document.getElementById('summary-room-subtotal');
+        const summaryNights = document.getElementById('summary-nights');
+        const summaryGuests = document.getElementById('summary-guests');
+        const summaryExtraBedRow = document.getElementById('summary-extra-bed-row');
+        const summaryExtraBedTotal = document.getElementById('summary-extra-bed-total');
+        const summaryTotal = document.getElementById('summary-total');
+        const guestWarning = document.getElementById('guest-warning');
+        const whatsappProceed = document.getElementById('whatsapp-proceed');
+
+        const EXTRA_BED_PRICE = 1000;
+
+        function updateCart() {
+            const checkin = new Date(checkinInput.value);
+            const checkout = new Date(checkoutInput.value);
+            const roomType = roomTypeSelect.value;
+            const selectedOption = roomTypeSelect.options[roomTypeSelect.selectedIndex];
+            const roomPrice = parseInt(selectedOption.dataset.price);
+            const roomCapacity = parseInt(selectedOption.dataset.capacity);
+            const roomQty = parseInt(roomQtyInput.value) || 1;
+            const guestQty = parseInt(guestQtyInput.value) || 1;
+            const isExtraBed = extraBedToggle.checked;
+            const extraBedQty = isExtraBed ? (parseInt(extraBedQtyInput.value) || 0) : 0;
+
+            // Calculate nights
+            let nights = 0;
+            if (checkinInput.value && checkoutInput.value && checkout > checkin) {
+                nights = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24));
+            }
+
+            // Capacity Validation
+            const totalCapacity = roomCapacity * roomQty;
+            if (guestQty > totalCapacity) {
+                guestWarning.classList.remove('hidden');
+            } else {
+                guestWarning.classList.add('hidden');
+            }
+
+            // Totals
+            const roomSubtotal = roomPrice * roomQty * (nights || 1);
+            const extraBedSubtotal = extraBedQty * EXTRA_BED_PRICE * (nights || 1);
+            const grandTotal = roomSubtotal + extraBedSubtotal;
+
+            // Update UI
+            summaryRoomName.textContent = `${roomQty} × ${roomType}`;
+            summaryRoomSubtotal.textContent = `₹${roomSubtotal.toLocaleString()}`;
+            summaryNights.textContent = `${nights} ${nights === 1 ? 'Night' : 'Nights'}`;
+            summaryGuests.textContent = guestQty;
+            
+            if (isExtraBed) {
+                extraBedControls.classList.remove('hidden');
+                summaryExtraBedRow.classList.remove('hidden');
+                summaryExtraBedTotal.textContent = `₹${extraBedSubtotal.toLocaleString()}`;
+            } else {
+                extraBedControls.classList.add('hidden');
+                summaryExtraBedRow.classList.add('hidden');
+            }
+
+            summaryTotal.textContent = `₹${grandTotal.toLocaleString()}`;
+
+            // WhatsApp Message
+            whatsappProceed.onclick = () => {
+                if (!checkinInput.value || !checkoutInput.value) {
+                    alert('Please select check-in and check-out dates.');
+                    return;
+                }
+                
+                const message = `Hello, I would like to book rooms at your hotel.
+
+Booking Details:
+* Check-in: ${new Date(checkinInput.value).toLocaleDateString('en-GB')}
+* Check-out: ${new Date(checkoutInput.value).toLocaleDateString('en-GB')}
+* Nights: ${nights}
+
+Rooms:
+* ${roomType} × ${roomQty}
+
+Guests: ${guestQty}
+
+Extra Bedding: ${isExtraBed ? 'Yes (' + extraBedQty + ')' : 'No'}
+
+Final Amount: ₹${grandTotal.toLocaleString()} + GST/Service Charges may apply
+
+Please confirm availability.`;
+
+                const encodedMessage = encodeURIComponent(message);
+                window.open(`https://wa.me/919810139655?text=${encodedMessage}`, '_blank');
+            };
+        }
+
+        [checkinInput, checkoutInput, roomTypeSelect, roomQtyInput, guestQtyInput, extraBedToggle, extraBedQtyInput].forEach(el => {
+            if(el) {
+                el.addEventListener('change', updateCart);
+                el.addEventListener('input', updateCart);
+            }
+        });
+
+        // Set default dates
+        const todayStr = new Date().toISOString().split('T')[0];
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const tomorrowStr = tomorrow.toISOString().split('T')[0];
+        
+        if(checkinInput && checkoutInput) {
+            checkinInput.value = todayStr;
+            checkoutInput.value = tomorrowStr;
+            updateCart();
+        }
 
         // Intro Splash Script
         window.addEventListener('DOMContentLoaded', () => {
