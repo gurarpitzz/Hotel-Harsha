@@ -565,11 +565,11 @@
                     <div class="p-8 bg-linen flex justify-between items-end border-b border-cedar/10">
                         <div>
                             <h3 class="font-serif text-2xl mb-1">Superior Deluxe</h3>
-                            <p class="text-forest font-semibold">₹4,300 <span class="text-xs font-normal opacity-60">/ Night</span></p>
+                            <p class="text-forest font-semibold">₹5,500 <span class="text-xs font-normal opacity-60">/ Night</span></p>
                             <div class="mt-4 space-y-1 opacity-50 text-[8px] uppercase tracking-[0.2em] font-bold">
-                                <p>Room Only: ₹4,300</p>
-                                <p>With Breakfast: ₹5,000</p>
-                                <p>Bf + Dinner: ₹6,000</p>
+                                <p>Room Only: ₹5,500</p>
+                                <p>With Breakfast: ₹6,200</p>
+                                <p>Bf + Dinner: ₹7,200</p>
                             </div>
                         </div>
                         <button onclick="addToCart('Superior Deluxe')"
@@ -622,11 +622,11 @@
                     <div class="p-8 bg-linen flex justify-between items-end border-b border-cedar/10">
                         <div>
                             <h3 class="font-serif text-2xl mb-1">Super Deluxe</h3>
-                            <p class="text-forest font-semibold">₹3,400 <span class="text-xs font-normal opacity-60">/ Night</span></p>
+                            <p class="text-forest font-semibold">₹4,500 <span class="text-xs font-normal opacity-60">/ Night</span></p>
                             <div class="mt-4 space-y-1 opacity-50 text-[8px] uppercase tracking-[0.2em] font-bold">
-                                <p>Room Only: ₹3,400</p>
-                                <p>With Breakfast: ₹4,100</p>
-                                <p>Bf + Dinner: ₹5,100</p>
+                                <p>Room Only: ₹4,500</p>
+                                <p>With Breakfast: ₹5,200</p>
+                                <p>Bf + Dinner: ₹6,200</p>
                             </div>
                         </div>
                         <button onclick="addToCart('Super Deluxe')"
@@ -673,11 +673,11 @@
                     <div class="p-8 bg-linen flex justify-between items-end border-b border-cedar/10">
                         <div>
                             <h3 class="font-serif text-2xl mb-1">Semi Deluxe</h3>
-                            <p class="text-forest font-semibold">₹3,200 <span class="text-xs font-normal opacity-60">/ Night</span></p>
+                            <p class="text-forest font-semibold">₹3,500 <span class="text-xs font-normal opacity-60">/ Night</span></p>
                             <div class="mt-4 space-y-1 opacity-50 text-[8px] uppercase tracking-[0.2em] font-bold">
-                                <p>Room Only: ₹3,200</p>
-                                <p>With Breakfast: ₹3,900</p>
-                                <p>Bf + Dinner: ₹4,900</p>
+                                <p>Room Only: ₹3,500</p>
+                                <p>With Breakfast: ₹4,200</p>
+                                <p>Bf + Dinner: ₹5,200</p>
                             </div>
                         </div>
                         <button onclick="addToCart('Semi Deluxe')"
@@ -724,11 +724,11 @@
                     <div class="p-8 bg-linen flex justify-between items-end border-b border-cedar/10">
                         <div>
                             <h3 class="font-serif text-2xl mb-1">Family Suite</h3>
-                            <p class="text-forest font-semibold">₹4,500 <span class="text-xs font-normal opacity-60">/ Night</span></p>
+                            <p class="text-forest font-semibold">₹6,500 <span class="text-xs font-normal opacity-60">/ Night</span></p>
                             <div class="mt-4 space-y-1 opacity-50 text-[8px] uppercase tracking-[0.2em] font-bold">
-                                <p>Room Only: ₹4,500</p>
-                                <p>With Breakfast: ₹5,900</p>
-                                <p>Bf + Dinner: ₹7,900</p>
+                                <p>Room Only: ₹6,500</p>
+                                <p>With Breakfast: ₹7,900</p>
+                                <p>Bf + Dinner: ₹9,900</p>
                             </div>
                         </div>
                         <button onclick="addToCart('Family Suite')"
@@ -1415,36 +1415,36 @@
                 capacity: 2, 
                 img: 'superior deluxe/I91A9647-2.jpg',
                 plans: {
-                    'room_only': 4300,
-                    'with_breakfast': 5000,
-                    'breakfast_dinner': 6000
+                    'room_only': 5500,
+                    'with_breakfast': 6200,
+                    'breakfast_dinner': 7200
                 }
             },
             'Super Deluxe': { 
                 capacity: 2, 
                 img: 'super deluxe/I91A9527.jpg',
                 plans: {
-                    'room_only': 3400,
-                    'with_breakfast': 4100,
-                    'breakfast_dinner': 5100
+                    'room_only': 4500,
+                    'with_breakfast': 5200,
+                    'breakfast_dinner': 6200
                 }
             },
             'Semi Deluxe': { 
                 capacity: 2, 
                 img: 'Semi Deluxe/I91A9569.jpg',
                 plans: {
-                    'room_only': 3200,
-                    'with_breakfast': 3900,
-                    'breakfast_dinner': 4900
+                    'room_only': 3500,
+                    'with_breakfast': 4200,
+                    'breakfast_dinner': 5200
                 }
             },
             'Family Suite': { 
                 capacity: 4, 
                 img: 'family suite/I91A9767.jpg',
                 plans: {
-                    'room_only': 4500,
-                    'with_breakfast': 5900,
-                    'breakfast_dinner': 7900
+                    'room_only': 6500,
+                    'with_breakfast': 7900,
+                    'breakfast_dinner': 9900
                 }
             }
         };
@@ -1542,8 +1542,16 @@
         function enforceCapacity(index) {
             const item = cart[index];
             const data = ROOM_DATA[item.type];
-            const requiredExtra = Math.max(0, item.guests - (item.quantity * data.capacity));
-            item.extraBedding = requiredExtra;
+            // Rule: Max 1 extra bedding per room. 
+            // Max capacity per room = data.capacity + 1
+            const maxPerRoom = data.capacity + 1;
+            
+            // Auto-calculate rooms based on guests
+            item.quantity = Math.ceil(item.guests / maxPerRoom);
+            
+            // Auto-calculate extra bedding
+            // Only needed if guests exceed (rooms * base_capacity)
+            item.extraBedding = Math.max(0, item.guests - (item.quantity * data.capacity));
         }
 
 
@@ -1613,19 +1621,17 @@
                     
                     <div class="grid grid-cols-2 gap-4 pt-4 border-t border-cedar/5">
                         <div class="space-y-1">
-                            <label class="text-[8px] uppercase tracking-widest font-bold opacity-40">Rooms</label>
-                            <div class="flex items-center space-x-3">
-                                <button onclick="updateQuantity(${index}, -1)" class="w-6 h-6 border border-cedar/10 rounded-full flex items-center justify-center text-xs">-</button>
-                                <span class="text-xs font-bold">${item.quantity}</span>
-                                <button onclick="updateQuantity(${index}, 1)" class="w-6 h-6 border border-cedar/10 rounded-full flex items-center justify-center text-xs">+</button>
+                            <label class="text-[8px] uppercase tracking-widest font-bold opacity-40">Allocated Rooms</label>
+                            <div class="flex items-center">
+                                <span class="text-xs font-bold text-forest">${item.quantity} Rooms</span>
                             </div>
                         </div>
                         <div class="space-y-1">
-                            <label class="text-[8px] uppercase tracking-widest font-bold opacity-40">Guests</label>
+                            <label class="text-[8px] uppercase tracking-widest font-bold opacity-40">Total Guests</label>
                             <div class="flex items-center space-x-3">
-                                <button onclick="updateGuests(${index}, -1)" class="w-6 h-6 border border-cedar/10 rounded-full flex items-center justify-center text-xs">-</button>
+                                <button onclick="updateGuests(${index}, -1)" class="w-6 h-6 border border-cedar/10 rounded-full flex items-center justify-center text-xs hover:bg-cedar hover:text-linen transition-colors">-</button>
                                 <span class="text-xs font-bold">${item.guests}</span>
-                                <button onclick="updateGuests(${index}, 1)" class="w-6 h-6 border border-cedar/10 rounded-full flex items-center justify-center text-xs">+</button>
+                                <button onclick="updateGuests(${index}, 1)" class="w-6 h-6 border border-cedar/10 rounded-full flex items-center justify-center text-xs hover:bg-cedar hover:text-linen transition-colors">+</button>
                             </div>
                         </div>
                     </div>
