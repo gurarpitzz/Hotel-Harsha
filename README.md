@@ -1,6 +1,6 @@
 # Hotel Harsha, Shimla - Official Website
 
-![Hotel Harsha Banner](I91A9638.jpg)
+![Hotel Harsha Banner](assets/general/exterior_view.jpg)
 
 A premium, high-conversion landing page developed for **Hotel Harsha, Shimla**, a heritage establishment founded in 1977. This project blends Victorian architectural heritage with modern web standards to create a seamless luxury experience.
 
