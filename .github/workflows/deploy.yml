@@ -24,6 +24,5 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
         server-dir: ./
-        # This tells GitHub to leave your manually uploaded video completely alone
-        exclude: |
-          **/MMT Hotel Harsha_2.mp4
+        port: 21
+        state-name: .ftp-deploy-sync-state.json
