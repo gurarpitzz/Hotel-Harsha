@@ -200,15 +200,10 @@
             border-bottom: 1px solid rgba(74, 55, 40, 0.05);
         }
 
-        #main-nav.scrolled .nav-link {
-            color: #4A3728 !important;
-        }
-
-        #main-nav.scrolled .nav-logo-text {
-            color: #4A3728 !important;
-        }
-
-        #main-nav.scrolled #mobile-menu-btn {
+        #main-nav.scrolled .nav-link,
+        #main-nav.scrolled .nav-logo-text,
+        #main-nav.scrolled #mobile-menu-btn,
+        #main-nav.scrolled .cart-btn {
             color: #4A3728 !important;
         }
 
@@ -276,6 +271,16 @@
 
         .instagram-fab:hover {
             transform: scale(1.1);
+        }
+
+        .gallery-view-btn.active-view {
+            background-color: #4A3728 !important;
+            color: #F8F5F2 !important;
+        }
+
+        .gallery-view-btn:not(.active-view) {
+            background-color: transparent !important;
+            color: #4A3728 !important;
         }
 
         .facebook-fab:hover {
@@ -370,27 +375,40 @@
                         Home</span>
                 </div>
             </a>
-            <div class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.3em] font-bold text-linen">
+            <div class="hidden md:flex items-center space-x-10 text-[10px] uppercase tracking-[0.3em] font-bold text-linen">
                 <a href="#story" class="nav-link hover:opacity-60 transition-all duration-300">The Story</a>
                 <a href="#rooms" class="nav-link hover:opacity-60 transition-all duration-300">Rooms</a>
                 <a href="#tariff" class="nav-link hover:opacity-60 transition-all duration-300">Rates</a>
-                <a href="#dining" class="nav-link hover:opacity-60 transition-all duration-300">Dining</a>
                 <a href="#gallery" class="nav-link hover:opacity-60 transition-all duration-300">Gallery</a>
                 <a href="#contact" class="nav-link hover:opacity-60 transition-all duration-300">Contact</a>
+                <button onclick="openCart()" class="cart-btn relative p-2 hover:opacity-60 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-forest text-white text-[8px] h-4 w-4 rounded-full flex items-center justify-center hidden">0</span>
+                </button>
             </div>
-            <button id="mobile-menu-btn" class="md:hidden text-linen transition-colors duration-500 focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
+            
+            <!-- Mobile Cart & Menu -->
+            <div class="md:hidden flex items-center space-x-4">
+                <button onclick="openCart()" class="cart-btn relative p-2 text-linen">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span id="cart-badge-mobile" class="absolute top-0 right-0 bg-forest text-white text-[8px] h-4 w-4 rounded-full flex items-center justify-center hidden">0</span>
+                </button>
+                <button id="mobile-menu-btn" class="text-linen transition-colors duration-500 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-linen border-t border-cedar/10 py-6 px-6 space-y-4">
             <a href="#story" class="block text-[10px] uppercase tracking-widest font-bold">The Story</a>
             <a href="#rooms" class="block text-[10px] uppercase tracking-widest font-bold">Rooms</a>
             <a href="#tariff" class="block text-[10px] uppercase tracking-widest font-bold">Rates</a>
-            <a href="#dining" class="block text-[10px] uppercase tracking-widest font-bold">Dining</a>
             <a href="#gallery" class="block text-[10px] uppercase tracking-widest font-bold">Gallery</a>
             <a href="#contact" class="block text-[10px] uppercase tracking-widest font-bold">Contact</a>
         </div>
@@ -550,10 +568,9 @@
                             <p class="text-forest font-semibold">₹5,500 <span class="text-xs font-normal opacity-60">/
                                     Night</span></p>
                         </div>
-                        <a href="https://wa.me/919810139655?text=Hi%20Hotel%20Harsha,%20I'm%20interested%20in%20booking%20a%20Superior%20Deluxe%20stay.%20Please%20share%20availability."
-                            target="_blank"
-                            class="text-xs uppercase tracking-widest font-bold border-b border-cedar hover:text-forest hover:border-forest transition-colors">Book
-                            Now</a>
+                        <button onclick="addToCart('Superior Deluxe')"
+                            class="text-xs uppercase tracking-widest font-bold border-b border-cedar hover:text-forest hover:border-forest transition-colors">Add
+                            To Cart</button>
                     </div>
                 </div>
 
@@ -604,10 +621,9 @@
                             <p class="text-forest font-semibold">₹4,500 <span class="text-xs font-normal opacity-60">/
                                     Night</span></p>
                         </div>
-                        <a href="https://wa.me/919810139655?text=Hi%20Hotel%20Harsha,%20I'm%20interested%20in%20booking%20a%20Super%20Deluxe%20stay.%20Please%20share%20availability."
-                            target="_blank"
-                            class="text-xs uppercase tracking-widest font-bold border-b border-cedar hover:text-forest hover:border-forest transition-colors">Book
-                            Now</a>
+                        <button onclick="addToCart('Super Deluxe')"
+                            class="text-xs uppercase tracking-widest font-bold border-b border-cedar hover:text-forest hover:border-forest transition-colors">Add
+                            To Cart</button>
                     </div>
                 </div>
 
@@ -652,10 +668,9 @@
                             <p class="text-forest font-semibold">₹3,500 <span class="text-xs font-normal opacity-60">/
                                     Night</span></p>
                         </div>
-                        <a href="https://wa.me/919810139655?text=Hi%20Hotel%20Harsha,%20I'm%20interested%20in%20booking%20a%20Semi%20Deluxe%20stay.%20Please%20share%20availability."
-                            target="_blank"
-                            class="text-xs uppercase tracking-widest font-bold border-b border-cedar hover:text-forest hover:border-forest transition-colors">Book
-                            Now</a>
+                        <button onclick="addToCart('Semi Deluxe')"
+                            class="text-xs uppercase tracking-widest font-bold border-b border-cedar hover:text-forest hover:border-forest transition-colors">Add
+                            To Cart</button>
                     </div>
                 </div>
 
@@ -700,10 +715,9 @@
                             <p class="text-forest font-semibold">₹6,500 <span class="text-xs font-normal opacity-60">/
                                     Night</span></p>
                         </div>
-                        <a href="https://wa.me/919810139655?text=Hi%20Hotel%20Harsha,%20I'm%20interested%20in%20booking%20a%20Family%20Suite%20stay.%20Please%20share%20availability."
-                            target="_blank"
-                            class="text-xs uppercase tracking-widest font-bold border-b border-cedar hover:text-forest hover:border-forest transition-colors">Book
-                            Now</a>
+                        <button onclick="addToCart('Family Suite')"
+                            class="text-xs uppercase tracking-widest font-bold border-b border-cedar hover:text-forest hover:border-forest transition-colors">Add
+                            To Cart</button>
                     </div>
                 </div>
             </div>
@@ -936,11 +950,11 @@
                 <div class="flex justify-center mb-12">
                     <div class="inline-flex rounded-sm shadow-sm overflow-hidden border border-cedar">
                         <button id="show-slideshow"
-                            class="gallery-view-btn active px-6 py-2 text-[10px] font-bold uppercase tracking-widest bg-cedar text-linen transition-colors">
+                            class="gallery-view-btn active-view px-6 py-2 text-[10px] font-bold uppercase tracking-widest transition-colors">
                             Slideshow
                         </button>
                         <button id="show-collage"
-                            class="gallery-view-btn px-6 py-2 text-[10px] font-bold uppercase tracking-widest text-cedar hover:bg-cedar hover:text-linen transition-colors border-l border-cedar">
+                            class="gallery-view-btn px-6 py-2 text-[10px] font-bold uppercase tracking-widest transition-colors border-l border-cedar">
                             Collage
                         </button>
                     </div>
@@ -948,7 +962,7 @@
             </div>
 
             <!-- Slideshow View -->
-            <div id="gallery-slideshow-container" class="reveal">
+            <div id="gallery-slideshow-container" class="transition-all duration-700 ease-in-out">
                 <div id="mainGalleryCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel"
                     data-bs-interval="4000">
                     <div class="carousel-inner rounded-sm shadow-2xl">
@@ -1101,7 +1115,7 @@
             </div>
 
             <!-- Collage View (Hidden by default) -->
-            <div id="gallery-collage-container" class="hidden reveal">
+            <div id="gallery-collage-container" class="hidden opacity-0 transition-all duration-700 ease-in-out">
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                     <img src="I91A9638.jpg"
                         class="w-full h-80 object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500 shadow-md">
@@ -1230,23 +1244,123 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-12 border-t border-cedar/10 bg-linen">
-        <div
-            class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-            <a href="#" class="flex items-center space-x-3">
-                <img src="hotel harsha logo.png" alt="Hotel Harsha Logo" class="h-10 w-auto">
-                <span class="font-serif text-lg text-linen nav-logo-text transition-colors duration-500">Hotel Harsha</span>
-            </a>
-            <div class="text-[10px] uppercase tracking-[0.3em] opacity-40">
-                &copy; 2026 Hotel Harsha Shimla. All rights reserved.
+    <!-- Cart Drawer Overlay -->
+    <div id="cart-drawer-overlay" onclick="closeCart()" class="fixed inset-0 bg-cedar/40 backdrop-blur-sm z-[2000] opacity-0 pointer-events-none transition-all duration-500"></div>
+    
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full md:w-[500px] bg-linen shadow-2xl z-[2001] translate-x-full transition-transform duration-500 flex flex-col">
+        <div class="p-8 border-b border-cedar/10 flex justify-between items-center bg-cedar text-linen">
+            <div>
+                <h2 class="font-serif text-2xl">Booking Cart</h2>
+                <p class="text-[9px] uppercase tracking-widest opacity-60 mt-1">Refine your stay details</p>
             </div>
-            <div class="flex space-x-8 text-[10px] uppercase tracking-widest font-bold">
-                <a href="https://www.facebook.com/HarshaShimlasimla/" target="_blank"
-                    class="hover:text-forest transition-colors">Facebook</a>
-                <a href="https://www.google.com/travel/hotels/entity/ChkIzJGEmYfugJnYARoML2cvMTFnX2IzYmYxEAE/overview"
-                    target="_blank" class="hover:text-forest transition-colors">Google</a>
-                <a href="#top" class="hover:text-forest transition-colors">Back to Top</a>
+            <button onclick="closeCart()" class="p-2 hover:opacity-50 transition-opacity">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="cart-content" class="flex-1 overflow-y-auto p-8 space-y-8">
+            <!-- Global Dates -->
+            <div class="bg-white p-6 rounded-sm shadow-sm border border-cedar/5 space-y-4">
+                <h4 class="text-[10px] uppercase tracking-widest font-bold text-cedar opacity-40">Stay Period</h4>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <label class="text-[8px] uppercase tracking-widest font-bold">Check-in</label>
+                        <input type="date" id="cart-checkin" class="w-full text-sm border-b border-cedar/20 focus:border-forest outline-none py-1">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-[8px] uppercase tracking-widest font-bold">Check-out</label>
+                        <input type="date" id="cart-checkout" class="w-full text-sm border-b border-cedar/20 focus:border-forest outline-none py-1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Items -->
+            <div id="cart-items-container" class="space-y-6">
+                <!-- Dynamic Items -->
+            </div>
+        </div>
+
+        <!-- Cart Footer -->
+        <div id="cart-footer" class="p-8 bg-white border-t border-cedar/10">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <p class="text-[10px] uppercase tracking-widest font-bold opacity-40">Estimated Total</p>
+                    <p id="cart-total-display" class="font-serif text-3xl text-cedar">₹0</p>
+                </div>
+                <p class="text-[8px] uppercase tracking-widest opacity-40 mb-1">+ GST/Service Charges may apply</p>
+            </div>
+            <button onclick="proceedToWhatsApp()" id="whatsapp-btn" class="w-full bg-forest text-linen py-4 rounded-sm uppercase tracking-[0.3em] font-bold text-xs hover:bg-cedar transition-all duration-500 shadow-xl disabled:opacity-30 disabled:cursor-not-allowed">
+                Proceed to WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-cedar text-linen px-8 py-4 rounded-sm shadow-2xl z-[3000] translate-y-24 transition-transform duration-500 flex items-center space-x-3">
+        <div class="h-2 w-2 bg-forest rounded-full animate-pulse"></div>
+        <span id="toast-message" class="text-[10px] uppercase tracking-widest font-bold">Item added to cart</span>
+    </div>
+
+    <!-- Back to Top Section -->
+    <section class="bg-linen py-16 border-t border-cedar/5">
+        <div class="container mx-auto px-6 flex justify-center">
+            <a href="#" class="group flex flex-col items-center">
+                <span class="text-[11px] uppercase tracking-[0.5em] font-bold text-cedar/40 group-hover:text-cedar transition-all duration-500">Back to Top</span>
+                <div class="h-[1px] w-12 bg-cedar/10 group-hover:w-24 group-hover:bg-cedar transition-all duration-700 mt-4"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-cedar text-linen pt-24 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+                <div class="reveal">
+                    <img src="hotel harsha logo.png" alt="Hotel Harsha Logo" class="h-16 w-auto mb-8 brightness-0 invert opacity-80">
+                    <p class="opacity-60 leading-relaxed text-sm">
+                        A timeless heritage retreat in the heart of Shimla. Experience Victorian elegance and warm hospitality since 1977.
+                    </p>
+                </div>
+                <div class="reveal">
+                    <h4 class="text-xs uppercase tracking-[0.3em] font-bold mb-8 opacity-40">Contact Info</h4>
+                    <ul class="space-y-4 text-sm opacity-80">
+                        <li class="flex items-start space-x-3">
+                            <span class="w-5 h-5 flex-shrink-0 opacity-40">📍</span>
+                            <span>Hotel Harsha, Near Secretariat, Chotta Shimla, Shimla, Himachal Pradesh 171002</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <span class="w-5 h-5 flex-shrink-0 opacity-40">📞</span>
+                            <span>+91 9810139655</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <span class="w-5 h-5 flex-shrink-0 opacity-40">✉️</span>
+                            <span>hotelharshashimla@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="reveal">
+                    <h4 class="text-xs uppercase tracking-[0.3em] font-bold mb-8 opacity-40">Quick Links</h4>
+                    <ul class="space-y-4 text-sm uppercase tracking-widest font-semibold opacity-60">
+                        <li><a href="#story" class="hover:text-forest transition-colors">Our Story</a></li>
+                        <li><a href="#rooms" class="hover:text-forest transition-colors">Rooms</a></li>
+                        <li><a href="#tariff" class="hover:text-forest transition-colors">Tariff</a></li>
+                        <li><a href="#gallery" class="hover:text-forest transition-colors">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="reveal">
+                    <h4 class="text-xs uppercase tracking-[0.3em] font-bold mb-8 opacity-40">Social Media</h4>
+                    <div class="flex space-x-6">
+                        <a href="https://www.instagram.com/hotelharsha" class="opacity-60 hover:opacity-100 transition-opacity">Instagram</a>
+                        <a href="https://www.facebook.com/HarshaShimlasimla/" class="opacity-60 hover:opacity-100 transition-opacity">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest opacity-40">
+                <p>© 2026 Hotel Harsha Shimla. All rights reserved.</p>
+                <p>Built with Heritage & Heart</p>
             </div>
         </div>
     </footer>
@@ -1286,6 +1400,315 @@
             }, 10000); // 10 seconds
         });
 
+        // Cart System Implementation
+        const ROOM_DATA = {
+            'Superior Deluxe': { 
+                capacity: 2, 
+                img: 'superior deluxe/I91A9647-2.jpg',
+                plans: {
+                    'room_only': 4300,
+                    'with_breakfast': 5000,
+                    'breakfast_dinner': 6000
+                }
+            },
+            'Super Deluxe': { 
+                capacity: 2, 
+                img: 'super deluxe/I91A9527.jpg',
+                plans: {
+                    'room_only': 3400,
+                    'with_breakfast': 4100,
+                    'breakfast_dinner': 5100
+                }
+            },
+            'Semi Deluxe': { 
+                capacity: 2, 
+                img: 'Semi Deluxe/I91A9569.jpg',
+                plans: {
+                    'room_only': 3200,
+                    'with_breakfast': 3900,
+                    'breakfast_dinner': 4900
+                }
+            },
+            'Family Suite': { 
+                capacity: 4, 
+                img: 'family suite/I91A9767.jpg',
+                plans: {
+                    'room_only': 4500,
+                    'with_breakfast': 5900,
+                    'breakfast_dinner': 7900
+                }
+            }
+        };
+
+        const EXTRA_BED_PRICES = {
+            'room_only': 500,
+            'with_breakfast': 850,
+            'breakfast_dinner': 1350
+        };
+
+        const PLAN_NAMES = {
+            'room_only': 'Room Only',
+            'with_breakfast': 'With Breakfast',
+            'breakfast_dinner': 'Breakfast & Dinner'
+        };
+        let cart = JSON.parse(localStorage.getItem('hotelHarshaCart')) || [];
+
+        function saveCart() {
+            localStorage.setItem('hotelHarshaCart', JSON.stringify(cart));
+            updateBadges();
+        }
+
+        function updateBadges() {
+            const count = cart.reduce((acc, item) => acc + item.quantity, 0);
+            const badge = document.getElementById('cart-badge');
+            const badgeMobile = document.getElementById('cart-badge-mobile');
+            
+            [badge, badgeMobile].forEach(el => {
+                if (count > 0) {
+                    el.textContent = count;
+                    el.classList.remove('hidden');
+                } else {
+                    el.classList.add('hidden');
+                }
+            });
+        }
+
+        function openCart() {
+            document.getElementById('cart-drawer-overlay').classList.remove('pointer-events-none', 'opacity-0');
+            document.getElementById('cart-drawer').classList.remove('translate-x-full');
+            renderCart();
+        }
+
+        function closeCart() {
+            document.getElementById('cart-drawer-overlay').classList.add('pointer-events-none', 'opacity-0');
+            document.getElementById('cart-drawer').classList.add('translate-x-full');
+        }
+
+        function addToCart(type) {
+            const existing = cart.find(item => item.type === type && item.plan === 'room_only');
+            if (existing) {
+                existing.quantity++;
+            } else {
+                cart.push({
+                    type: type,
+                    quantity: 1,
+                    guests: ROOM_DATA[type].capacity,
+                    extraBedding: 0,
+                    plan: 'room_only'
+                });
+            }
+            saveCart();
+            renderCart();
+            openCart();
+            showToast(`${type} added to cart`);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            saveCart();
+            renderCart();
+        }
+
+        function updateQuantity(index, delta) {
+            cart[index].quantity = Math.max(1, cart[index].quantity + delta);
+            enforceCapacity(index);
+            saveCart();
+            renderCart();
+        }
+
+        function updateGuests(index, delta) {
+            cart[index].guests = Math.max(1, cart[index].guests + delta);
+            enforceCapacity(index);
+            saveCart();
+            renderCart();
+        }
+
+        function updatePlan(index, plan) {
+            cart[index].plan = plan;
+            enforceCapacity(index);
+            saveCart();
+            renderCart();
+        }
+
+        function enforceCapacity(index) {
+            const item = cart[index];
+            const data = ROOM_DATA[item.type];
+            const requiredExtra = Math.max(0, item.guests - (item.quantity * data.capacity));
+            item.extraBedding = requiredExtra;
+        }
+
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = msg;
+            toast.classList.remove('translate-y-24');
+            setTimeout(() => toast.classList.add('translate-y-24'), 3000);
+        }
+
+        function renderCart() {
+            const container = document.getElementById('cart-items-container');
+            const checkinInput = document.getElementById('cart-checkin');
+            const checkoutInput = document.getElementById('cart-checkout');
+            const totalDisplay = document.getElementById('cart-total-display');
+            const whatsappBtn = document.getElementById('whatsapp-btn');
+
+            if (cart.length === 0) {
+                container.innerHTML = `<div class="py-20 text-center opacity-40"><p class="text-[10px] uppercase tracking-widest font-bold">Your cart is empty</p></div>`;
+                totalDisplay.textContent = '₹0';
+                whatsappBtn.disabled = true;
+                return;
+            }
+
+            whatsappBtn.disabled = false;
+            let grandTotal = 0;
+            let nights = 1;
+
+            if (checkinInput.value && checkoutInput.value) {
+                const start = new Date(checkinInput.value);
+                const end = new Date(checkoutInput.value);
+                if (end > start) {
+                    nights = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+                }
+            }
+
+            container.innerHTML = cart.map((item, index) => {
+                const data = ROOM_DATA[item.type];
+                const basePrice = data.plans[item.plan || 'room_only'];
+                const extraPrice = EXTRA_BED_PRICES[item.plan || 'room_only'];
+                const subtotal = (basePrice * item.quantity * nights) + (item.extraBedding * extraPrice * nights);
+                grandTotal += subtotal;
+
+                return `
+                <div class="bg-white p-5 rounded-sm shadow-sm border border-cedar/5 space-y-4 reveal active">
+                    <div class="flex gap-4 relative">
+                        <img src="${data.img}" class="w-20 h-20 object-cover rounded-sm">
+                        <div class="flex-1 pr-8">
+                            <h5 class="font-serif text-lg leading-tight mb-1">${item.type}</h5>
+                            <p class="text-[10px] text-forest font-bold">₹${basePrice.toLocaleString()} / Night</p>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="absolute top-0 right-0 text-red-800 opacity-20 hover:opacity-100 transition-opacity p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="space-y-1">
+                        <label class="text-[8px] uppercase tracking-widest font-bold opacity-40">Meal Plan</label>
+                        <select onchange="updatePlan(${index}, this.value)" class="w-full text-[10px] uppercase tracking-widest font-bold bg-linen/50 border border-cedar/10 outline-none py-2 px-3 rounded-sm cursor-pointer hover:bg-linen transition-colors">
+                            <option value="room_only" ${item.plan === 'room_only' ? 'selected' : ''}>Room Only</option>
+                            <option value="with_breakfast" ${item.plan === 'with_breakfast' ? 'selected' : ''}>With Breakfast</option>
+                            <option value="breakfast_dinner" ${item.plan === 'breakfast_dinner' ? 'selected' : ''}>Breakfast & Dinner</option>
+                        </select>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-cedar/5">
+                        <div class="space-y-1">
+                            <label class="text-[8px] uppercase tracking-widest font-bold opacity-40">Rooms</label>
+                            <div class="flex items-center space-x-3">
+                                <button onclick="updateQuantity(${index}, -1)" class="w-6 h-6 border border-cedar/10 rounded-full flex items-center justify-center text-xs">-</button>
+                                <span class="text-xs font-bold">${item.quantity}</span>
+                                <button onclick="updateQuantity(${index}, 1)" class="w-6 h-6 border border-cedar/10 rounded-full flex items-center justify-center text-xs">+</button>
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[8px] uppercase tracking-widest font-bold opacity-40">Guests</label>
+                            <div class="flex items-center space-x-3">
+                                <button onclick="updateGuests(${index}, -1)" class="w-6 h-6 border border-cedar/10 rounded-full flex items-center justify-center text-xs">-</button>
+                                <span class="text-xs font-bold">${item.guests}</span>
+                                <button onclick="updateGuests(${index}, 1)" class="w-6 h-6 border border-cedar/10 rounded-full flex items-center justify-center text-xs">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-cedar/5 flex justify-between items-center">
+                        <div class="flex items-center space-x-3">
+                            <label class="text-[8px] uppercase tracking-widest font-bold opacity-40">Extra Bedding Qty:</label>
+                            <span class="text-xs font-bold">${item.extraBedding}</span>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-[8px] uppercase tracking-widest opacity-40">Subtotal</p>
+                            <p class="font-bold text-sm">₹${subtotal.toLocaleString()}</p>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+
+            totalDisplay.textContent = `₹${grandTotal.toLocaleString()}`;
+        }
+
+        function proceedToWhatsApp() {
+            const checkin = document.getElementById('cart-checkin').value;
+            const checkout = document.getElementById('cart-checkout').value;
+            
+            if (!checkin || !checkout) {
+                alert('Please select your stay dates first.');
+                return;
+            }
+
+            const start = new Date(checkin);
+            const end = new Date(checkout);
+            const nights = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+            
+            if (nights <= 0) {
+                alert('Check-out date must be after check-in date.');
+                return;
+            }
+
+            let totalAmount = 0;
+            const roomDetails = cart.map(item => {
+                const data = ROOM_DATA[item.type];
+                const basePrice = data.plans[item.plan || 'room_only'];
+                const extraPrice = EXTRA_BED_PRICES[item.plan || 'room_only'];
+                const subtotal = (basePrice * item.quantity * nights) + (item.extraBedding * extraPrice * nights);
+                totalAmount += subtotal;
+                return `* ${item.type} (${PLAN_NAMES[item.plan]}) × ${item.quantity}`;
+            }).join('\n');
+
+            const totalGuests = cart.reduce((acc, item) => acc + item.guests, 0);
+            const totalExtraBeds = cart.reduce((acc, item) => acc + item.extraBedding, 0);
+
+            const message = `Hello, I would like to book rooms at your hotel.
+
+Booking Details:
+* Check-in: ${new Date(checkin).toLocaleDateString('en-GB')}
+* Check-out: ${new Date(checkout).toLocaleDateString('en-GB')}
+* Nights: ${nights}
+
+Rooms:
+${roomDetails}
+
+Guests: ${totalGuests}
+
+Extra Bedding: ${totalExtraBeds > 0 ? totalExtraBeds : 'No'}
+
+Final Amount:
+₹${totalAmount.toLocaleString()} + GST/Service Charges may apply
+
+Please confirm availability.`;
+
+            window.open(`https://wa.me/919810139655?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // Initialize Dates
+        window.addEventListener('DOMContentLoaded', () => {
+            const checkinInput = document.getElementById('cart-checkin');
+            const checkoutInput = document.getElementById('cart-checkout');
+            
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            
+            checkinInput.value = today.toISOString().split('T')[0];
+            checkoutInput.value = tomorrow.toISOString().split('T')[0];
+            
+            checkinInput.onchange = renderCart;
+            checkoutInput.onchange = renderCart;
+            
+            updateBadges();
+        });
+
         // Intro Splash Script
         window.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
@@ -1311,6 +1734,21 @@
         }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Video Visibility Observer - Ensures video resumes when scrolling back up
+        const videoElement = document.getElementById('hero-video');
+        if (videoElement) {
+            const videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        videoElement.play().catch(() => { /* Handle auto-play restrictions */ });
+                    } else {
+                        videoElement.pause();
+                    }
+                });
+            }, { threshold: 0.1 });
+            videoObserver.observe(videoElement);
+        }
 
         // Nav Scroll Effect
         window.addEventListener('scroll', () => {
@@ -1359,21 +1797,35 @@
         const collageContainer = document.getElementById('gallery-collage-container');
 
         showSlideshow.addEventListener('click', () => {
-            showSlideshow.classList.add('bg-cedar', 'text-linen');
-            showSlideshow.classList.remove('text-cedar');
-            showCollage.classList.remove('bg-cedar', 'text-linen');
-            showCollage.classList.add('text-cedar');
-            slideshowContainer.classList.remove('hidden');
-            collageContainer.classList.add('hidden');
+            if (showSlideshow.classList.contains('active-view')) return;
+            
+            showSlideshow.classList.add('active-view');
+            showCollage.classList.remove('active-view');
+            
+            collageContainer.classList.add('opacity-0');
+            setTimeout(() => {
+                collageContainer.classList.add('hidden');
+                slideshowContainer.classList.remove('hidden');
+                setTimeout(() => {
+                    slideshowContainer.classList.remove('opacity-0');
+                }, 50);
+            }, 400);
         });
 
         showCollage.addEventListener('click', () => {
-            showCollage.classList.add('bg-cedar', 'text-linen');
-            showCollage.classList.remove('text-cedar');
-            showSlideshow.classList.remove('bg-cedar', 'text-linen');
-            showSlideshow.classList.add('text-cedar');
-            collageContainer.classList.remove('hidden');
-            slideshowContainer.classList.add('hidden');
+            if (showCollage.classList.contains('active-view')) return;
+
+            showCollage.classList.add('active-view');
+            showSlideshow.classList.remove('active-view');
+            
+            slideshowContainer.classList.add('opacity-0');
+            setTimeout(() => {
+                slideshowContainer.classList.add('hidden');
+                collageContainer.classList.remove('hidden');
+                setTimeout(() => {
+                    collageContainer.classList.remove('opacity-0');
+                }, 50);
+            }, 400);
         });
 
         // Mobile Menu Toggle
