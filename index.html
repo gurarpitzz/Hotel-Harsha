@@ -1759,24 +1759,25 @@ Please confirm availability.`;
         const iconOn = document.getElementById('sound-icon-on');
         const iconOff = document.getElementById('sound-icon-off');
 
-        // Attempt to play with sound on load
+        // Attempt to play on load
         window.addEventListener('load', () => {
-            video.muted = false;
+            // Keep 'On' icon visible by default
+            iconOn.classList.remove('hidden');
+            iconOff.classList.add('hidden');
+
             video.play().catch(error => {
                 // If blocked, play muted as fallback
                 video.muted = true;
                 video.play();
-                // Update icons to show muted state initially if blocked
-                iconOn.classList.add('hidden');
-                iconOff.classList.remove('hidden');
+                // Keep 'On' icon visible so user knows sound is intended
             });
         });
 
         // Smart Unmute: Unmute on first user interaction to satisfy browser policies
         const unmuteOnInteraction = () => {
-            video.muted = false;
-            iconOn.classList.remove('hidden');
-            iconOff.classList.add('hidden');
+            if (video.muted) {
+                video.muted = false;
+            }
             document.removeEventListener('click', unmuteOnInteraction);
             document.removeEventListener('scroll', unmuteOnInteraction);
         };
