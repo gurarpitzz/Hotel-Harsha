@@ -25,4 +25,10 @@ jobs:
         local-dir: ./
         server-dir: ./
         port: 21
-        state-name: .ftp-deploy-sync-state.json
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/.ftp-deploy-sync-state.json
+          README.md
+          .gitignore
+          .gemini/
